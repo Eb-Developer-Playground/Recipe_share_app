@@ -1,0 +1,46 @@
+$primary-color1: white;
+$primary-color2: maroon;
+$primary-color3: black;
+$primary-backgroud: 'https://images.pexels.com/photos/4552113/pexels-photo-4552113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+
+body{
+    background-image: url($primary-backgroud);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+mat-card {
+ display: flex;
+ justify-content: center;
+ margin: auto;
+ margin-top: 10%;
+ color: $primary-color2;
+ height: 50vh ;
+ width: 25%;
+}
+
+mat-card-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-left: 20px;
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    margin: 20px auto auto auto;
+    height: 60px;
+    width: 60px;
+}
+button{
+    width: 220px;
+    color: $primary-color1;
+    background-color: $primary-color2;
+}

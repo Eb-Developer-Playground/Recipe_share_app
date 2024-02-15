@@ -1,19 +1,34 @@
-<mat-card class="loginCard">
+<body>
+  <mat-card class="loginCard">
+    <div>
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo"/>
+    </div>
     <mat-card-content>
       <form [formGroup]="options">
+      <div>
         <mat-form-field [floatLabel]="getFloatLabelValue()">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email e.g user@gmail.com" name="email" id="email" [formControl]="email" required>
+          <input matInput class="pemail" placeholder="Email e.g user@gmail.com" name="email" id="email" [formControl]="email" required>
           <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>
+      </div>
       
+      <div>
         <mat-form-field [floatLabel]="getFloatLabelValue()">
           <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" name="password" id="password" required>
+          <input matInput class="loginButton" placeholder="Password" name="password" id="password" required>
         </mat-form-field>
-  
-        <button mat-stroked-button color="primary">Login</button>
+      </div>
+      <div>
+        <button mat-stroked-button >Login</button>       
+      </div>
+      <div>
+        <p>Don't have an account yet?<span><a link=""> Sign up.</a></span></p>
+      </div>
       </form>
+
     </mat-card-content>
   </mat-card>
+</body>
+
   

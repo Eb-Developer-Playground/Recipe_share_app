@@ -18,7 +18,7 @@ import {MatButtonModule} from '@angular/material/button';
         NgIf
       ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.sass'
+  styleUrl: './login.component.scss'
 })
 export class LoginComponent {
   hideRequiredControl = new FormControl(false);
@@ -33,6 +33,7 @@ export class LoginComponent {
   // Get the labels on focus of the input field
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';
+    alert('label')
   }
   // Email validations
   email = new FormControl('', [Validators.required, Validators.email]);
