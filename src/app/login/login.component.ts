@@ -1,5 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
+import { HttpClient } from '@angular/common/http';
 import { FormBuilder,Validators, FormControl, FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import {FloatLabelType, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -38,7 +40,7 @@ export class LoginComponent {
     floatLabel: this.floatLabelControl,
   });
 
-  constructor(private _formBuilder: FormBuilder,private router: Router) {
+  constructor(private _formBuilder: FormBuilder,private router: Router, private userService: UserService,) {
     this.options = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -70,6 +72,19 @@ export class LoginComponent {
           // console log the data 
           console.log('Email:', email);
           console.log('Password:', password);
+          //get data from json file 
+          console.log(this.loginUser)
+          this.userService.getData().subscribe(data => {
+            console.log('Data from service:', data);
+          // Check if the entered credentials match the data from the server
+          const userExists = data.some((user: any) => user.email === email && user.password === password);
+          if (userExists) {
+            //successful login 
+            this.router.navigate(['/myprofile']);
+          } else {
+            alert('Invalid credentials');
+          }
+          });
        }
 
       } else {
