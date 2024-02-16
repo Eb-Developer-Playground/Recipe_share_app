@@ -52,4 +52,10 @@ mat-form-field {
 .footer{
     display: flex;
     justify-content: center; 
+    color: $primary-color3;
+}
+.footer p span {
+    text-decoration: underline;
+    cursor: pointer;
+    color: $primary-color2;
 }

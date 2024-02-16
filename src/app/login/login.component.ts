@@ -5,6 +5,9 @@ import {FloatLabelType, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { Router } from '@angular/router';
+import { get } from 'http';
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -21,6 +24,12 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  //declare user data 
+  loginUser: any = {
+    email: "",
+    password: ""
+  };
+  ///form control and validations 
   hideRequiredControl = new FormControl(false);
   floatLabelControl = new FormControl('auto' as FloatLabelType);
 
@@ -29,7 +38,7 @@ export class LoginComponent {
     floatLabel: this.floatLabelControl,
   });
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(private _formBuilder: FormBuilder,private router: Router) {
     this.options = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -47,5 +56,29 @@ export class LoginComponent {
       return 'Enter valid email address';
     }  
     return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+    //login function to handle user logins 
+    onSubmit() {
+      if (this.options.valid) {
+        // Form is valid, you can access the form control values
+        const getEmail = this.options.get('email');
+        const getPassword = this.options.get('password');
+        //ensure that they are not null
+       if (getEmail&& getPassword){
+          const email=getEmail.value;
+          const password=getPassword.value;
+          // console log the data 
+          console.log('Email:', email);
+          console.log('Password:', password);
+       }
+
+      } else {
+        // Form is invalid, handle validation errors
+        alert(" not logged in");
+      }
+    }
+  //function to handle navigation to signup page if the user doesn't have an account yet
+  navigateToSignUp() {
+  this.router.navigate(['/signup']);
   }
 }
