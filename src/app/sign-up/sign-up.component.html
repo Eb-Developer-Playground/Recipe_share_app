@@ -3,6 +3,7 @@
       <div>
         <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo"/>
       </div>
+
       <div class="cardContent">
         <form [formGroup]="options">
           <!--Username label and input-->
@@ -12,6 +13,7 @@
               <input matInput  placeholder="Username" name="text"  required>
             </mat-form-field>
           </div>
+
            <!--Email label and input-->
         <div>
           <mat-form-field [floatLabel]="getFloatLabelValue()">
@@ -20,6 +22,7 @@
             <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
           </mat-form-field>
         </div>
+
          <!--Password label and input-->
         <div>
           <mat-form-field [floatLabel]="getFloatLabelValue()">
@@ -27,6 +30,7 @@
             <input matInput type="password" placeholder="Password" name="password"  autocomplete="off" required>
           </mat-form-field>
         </div>
+        
          <!--Password confirmation label and input-->
         <div>
            <!--floatLabel allows the labels to move up on focus of the input field-->

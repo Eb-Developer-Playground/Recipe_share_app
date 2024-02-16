@@ -7,7 +7,7 @@ import { ViewRecipesComponent } from './view-recipes/view-recipes.component';
 import { MyRecipeComponent } from './my-recipe/my-recipe.component';
 
 export const routes: Routes = [
-    {path:'' ,component: SignUpComponent},
+    {path:'' ,component: LoginComponent},
     {path:'LandingPage', component: LandingPageComponent, pathMatch: 'full'},
     {path:'signup', component: SignUpComponent, pathMatch: 'full'}, 
     {path:'login', component: LoginComponent, pathMatch: 'full'},

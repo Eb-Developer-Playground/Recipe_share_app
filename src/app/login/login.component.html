@@ -3,7 +3,7 @@
     <div>
       <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo"/>
     </div>
-    <mat-card-content>
+    <div class="cardContent">
       <form [formGroup]="options">
       <div>
         <mat-form-field [floatLabel]="getFloatLabelValue()">
@@ -19,15 +19,15 @@
           <input matInput type="password" placeholder="Password" name="password"  required>
         </mat-form-field>
       </div>
-      <div>
+      <div class="loginbutton">
         <button mat-stroked-button >Login</button>       
       </div>
-      <div>
+      <div class="footer">
         <p>Don't have an account yet?<span><a link=""> Sign up.</a></span></p>
       </div>
       </form>
 
-    </mat-card-content>
+    </div>
   </mat-card>
 </div>
 
