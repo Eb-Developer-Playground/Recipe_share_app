@@ -29,17 +29,22 @@ export class LoginComponent {
     floatLabel: this.floatLabelControl,
   });
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder) {
+    this.options = this._formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    });
+  }
+  
   // Get the labels on focus of the input field
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';
-    alert('label')
   }
   // Email validations
   email = new FormControl('', [Validators.required, Validators.email]);
   getErrorMessage() {
     if (this.email.hasError('required')) {
-      return 'You must enter a valid email address';
+      return 'Enter valid email address';
     }  
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }

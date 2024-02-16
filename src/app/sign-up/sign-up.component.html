@@ -1,1 +1,50 @@
-<p>sign-up works!</p>
+<div class="signupCard">
+    <mat-card >
+      <div>
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo"/>
+      </div>
+      <div class="cardContent">
+        <form [formGroup]="options">
+          <!--Username label and input-->
+          <div>
+            <mat-form-field [floatLabel]="getFloatLabelValue()">
+              <mat-label>Username</mat-label>
+              <input matInput  placeholder="Username" name="text"  required>
+            </mat-form-field>
+          </div>
+           <!--Email label and input-->
+        <div>
+          <mat-form-field [floatLabel]="getFloatLabelValue()">
+            <mat-label>Email</mat-label>
+            <input matInput  placeholder="Email e.g user@gmail.com" name="email"  [formControl]="email"  autocomplete="off" required>
+            <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+          </mat-form-field>
+        </div>
+         <!--Password label and input-->
+        <div>
+          <mat-form-field [floatLabel]="getFloatLabelValue()">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password" name="password"  autocomplete="off" required>
+          </mat-form-field>
+        </div>
+         <!--Password confirmation label and input-->
+        <div>
+           <!--floatLabel allows the labels to move up on focus of the input field-->
+            <mat-form-field [floatLabel]="getFloatLabelValue()">
+              <mat-label>Password Confirmation</mat-label>
+              <input matInput type="password" placeholder="Password" name="passwordconfirm" autocomplete="off"  required>
+            </mat-form-field>
+          </div>
+        <div class="signupbutton">
+          <button mat-stroked-button >SignUp</button>       
+        </div>
+        <div class="footer">
+          <p>Already have an account?<span><a link=""> Login</a></span></p>
+        </div>
+        </form>
+  
+      </div>
+    </mat-card>
+  </div>
+  
+    
