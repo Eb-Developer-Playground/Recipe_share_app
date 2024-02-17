@@ -50,6 +50,8 @@
                formControlName="passwordconfirm" 
                autocomplete="off"  required>
             </mat-form-field>
+            <p class="passmatch" *ngIf="options.hasError('mismatch')">
+              Passwords do not match.</p>
           </div>
         <div class="signupbutton">
           <button mat-stroked-button >SignUp</button>       

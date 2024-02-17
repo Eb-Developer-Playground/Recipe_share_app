@@ -44,8 +44,10 @@ user:any ={
     username: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
-    passwordconfirm: ['', Validators.required],
-    
+    passwordconfirm: ['', Validators.required]    
+  },
+   {
+    validator: this.passwordMatchValidator.bind(this)
   });
 
   constructor(private _formBuilder: FormBuilder, private userService: UserService, private router: Router) {}
@@ -66,29 +68,40 @@ user:any ={
     return this.email.hasError('email') ? 'Not a valid email' : '';
 
   }
+  passwordMatchValidator(formGroup: FormGroup) {
+    const password = formGroup.controls['password'].value;
+    const confirmPassword = formGroup.controls['passwordconfirm'].value;
+     // Ensure both controls are available before comparing values
+      if (password !== null && confirmPassword !== null) {
+        return password === confirmPassword ? null : { mismatch: true };
+  }
+
+  // If either control is null, consider them not matching
+  return { mismatch: true };
+  }
   //handle data submission   
   onSubmit(){
-  if (this.options.valid) {
+  if (this.options.valid ) {
       // Form is valid, you can access the form control values
       const getUsername = this.options.get('username');
       const getEmail = this.options.get('email');
       const getPassword = this.options.get('password');
       const getPasswordconfirm = this.options.get('passwordconfirm');
-    //ensure that they are not null
+      //ensure that they are not null
         if (getUsername && getEmail&& getPassword&& getPasswordconfirm){
-    //get the values inputted by the user
+           //get the values inputted by the user
           const username=getUsername.value;
           const email=getEmail.value;
           const password=getPassword.value;
           const passwordconfirm=getPasswordconfirm.value;
-    //An object to hold the current user to be posted 
+          //An object to hold the current user information to be posted 
           const userData = {
           username: username,
           email: email,
           password: password,
           passwordconfirm: passwordconfirm,
           };
-    //post the data to the server 
+          //post the data to the server 
           this.userService.createusers(userData).subscribe(
           res=>{
             console.log(res);

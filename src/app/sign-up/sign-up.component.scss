@@ -50,7 +50,11 @@ mat-form-field {
     border: none;
     width: 70%;
 }
-
+.passmatch{
+    margin-left: 5%;
+    padding-left: 10px;
+    color: red;
+}
 .footer{
     display: flex;
     justify-content: center;
