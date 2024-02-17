@@ -1,9 +1,18 @@
 {
-    "user":
-     [
-      {
-        "email": "denisdelaki@gmail.com",
-        "password": "4444"
-      }
-    ]
+  "user": [
+    {
+      "id": "02de",
+      "username": "denis",
+      "email": "denisdelaki@gmail.com",
+      "password": "3333",
+      "passwordconfirm": "3333"
+    },
+    {
+      "id": "acf1",
+      "username": "denisdelaki",
+      "email": "kip@gmail.com",
+      "password": "1111",
+      "passwordconfirm": "1111"
+    }
+  ]
 }

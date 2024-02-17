@@ -5,12 +5,15 @@
       </div>
 
       <div class="cardContent">
-        <form [formGroup]="options">
+        <form [formGroup]="options" (submit)="onSubmit()" >
           <!--Username label and input-->
           <div>
             <mat-form-field [floatLabel]="getFloatLabelValue()">
               <mat-label>Username</mat-label>
-              <input matInput  placeholder="Username" name="text"  required>
+              <input matInput  placeholder="Username" 
+              name="username"
+              formControlName="username" 
+              type="text"  required>
             </mat-form-field>
           </div>
 
@@ -18,7 +21,10 @@
         <div>
           <mat-form-field [floatLabel]="getFloatLabelValue()">
             <mat-label>Email</mat-label>
-            <input matInput  placeholder="Email e.g user@gmail.com" name="email"  [formControl]="email"  autocomplete="off" required>
+            <input matInput  placeholder="Email e.g user@gmail.com" 
+            name="email" 
+            formControlName="email" 
+             autocomplete="off" required>
             <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
           </mat-form-field>
         </div>
@@ -27,16 +33,22 @@
         <div>
           <mat-form-field [floatLabel]="getFloatLabelValue()">
             <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="Password" name="password"  autocomplete="off" required>
+            <input matInput type="password" placeholder="Password"
+             name="password"  
+             formControlName="password" 
+             autocomplete="off" required>
           </mat-form-field>
         </div>
-        
+
          <!--Password confirmation label and input-->
         <div>
            <!--floatLabel allows the labels to move up on focus of the input field-->
             <mat-form-field [floatLabel]="getFloatLabelValue()">
               <mat-label>Password Confirmation</mat-label>
-              <input matInput type="password" placeholder="Password" name="passwordconfirm" autocomplete="off"  required>
+              <input matInput type="password" placeholder="confirm Password"
+               name="passwordconfirm" 
+               formControlName="passwordconfirm" 
+               autocomplete="off"  required>
             </mat-form-field>
           </div>
         <div class="signupbutton">

@@ -10,8 +10,14 @@ export class UserService {
   private apiUrl = 'http://localhost:3000/user/';
 
   constructor(private http: HttpClient) {}
-
+///get users from the server 
   getData(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+//create users during registration 
+
+createusers(userData:any): Observable<any>{
+  console.log(userData);
+  return this.http.post<any>(this.apiUrl, userData);
+}
 }
