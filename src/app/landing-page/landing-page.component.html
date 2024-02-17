@@ -11,7 +11,7 @@
                 <mat-toolbar-row>  
                 <div class="menunavs">
                     <a  mat-button  routerLink=""  routerLinkActive="active">Home</a>
-                    <a  mat-button  routerLink="">Recipe</a>
+                    <a  mat-button  routerLink="">Recipes</a>
                     <a  mat-button  routerLink="">Testimonials</a>
                     <a  mat-button  routerLink="">AboutUs</a>
                 </div>    
@@ -26,7 +26,26 @@
     </div>
     </header>
     <!--body-->
-    <div>        
+    <div> 
+              <mat-card class="bodycard">
+                <mat-card-content class="cardContent">
+                    <div>
+                        <h2>Share the Love, Share the Recipe
+                            <br>
+                            and Share the Food</h2>
+                        <p>
+                            Equity Eateries is a web app that allows you to <br>
+                            save your favorite recipes <br>and share them
+                        </p>
+                        <div >
+                            <button mat-stroked-button type="button" class="getStarted">GetStarted</button>       
+                          </div>                       
+                    </div>
+                    <div class="imagecontainer">
+                        <img mat-card-image class="bodyimage" src="https://images.unsplash.com/photo-1539136788836-5699e78bfc75?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    </div>
+                </mat-card-content>                     
+              </mat-card>
     </div>
     <!--Recommended recipe-->
     <div>        
