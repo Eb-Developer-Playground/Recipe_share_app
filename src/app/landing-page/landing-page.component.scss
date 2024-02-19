@@ -117,7 +117,7 @@ mat-toolbar{
     width: 130px;
   }
  
-  #Recommended{
+  #Recommended, #Testimonials{
     display: flex;
     direction: row;
     margin: auto 20px;
@@ -144,7 +144,10 @@ mat-toolbar{
     height: 100%;
     width: 100%;
   }
-
+  .recomcard p {
+    margin-left: 10px;
+    font-weight: bold;
+  }
     .recomcard button {
       background-color: $primary-color2;
       color: $primary-color1;
@@ -159,4 +162,42 @@ mat-toolbar{
   .recoImg{
     height: 50%;
     width: 100%;
+  }
+  .chefimage img{
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    border-radius: 100px;
+  }
+  .reviewcard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow:  0 0 5px 0 $primary-color3;  
+  }
+  .chefname{
+    font-style: italic;
+    font-weight: bold;
+  }
+  .chefreview{
+    margin-top: 20px;
+    padding: 8px;
+  }
+  #Testimonials{
+    display: flex;
+    direction: row;
+    justify-content: center;
+    margin: auto 20px;
+  }
+  .reviewcontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .arrow-icon{
+    background-color: $primary-color2; 
+    border-radius: 50%; 
+    padding: 10px; 
+    margin: 10px;
+    cursor: pointer;
   }
