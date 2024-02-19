@@ -16,8 +16,8 @@
                     <a mat-button href="#AboutUs">AboutUs</a>
                 </div>    
                 <div class="authbuttons">
-                    <button mat-stroked-button type="menu" class="loginbutton" >Login</button> 
-                    <button mat-stroked-button type="menu" class="signupbutton">Signup</button> 
+                    <button mat-stroked-button type="menu" class="loginbutton" (click)="Login()" >Login</button> 
+                    <button mat-stroked-button type="menu" class="signupbutton" (click)="SignUp()">Signup</button> 
                 </div>         
 
                 </mat-toolbar-row>
@@ -39,7 +39,7 @@
                             save your favorite recipes <br>and share them
                         </p>
                         <div >
-                            <button mat-stroked-button type="button" class="getStarted">GetStarted</button>       
+                            <button mat-stroked-button type="button" class="getStarted" (click)="SignUp()">GetStarted</button>       
                           </div>                       
                     </div>
                     <div class="imagecontainer">

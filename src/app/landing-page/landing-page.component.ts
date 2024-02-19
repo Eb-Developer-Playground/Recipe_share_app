@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
@@ -12,6 +13,13 @@ import {MatIconModule} from '@angular/material/icon'
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent implements OnInit {
+ constructor (private router :Router){}
+SignUp() {
+  this.router.navigate(['/signup']);
+}
+Login() {
+  this.router.navigate(['/login']);
+}
   showContent = false;
 
   ngOnInit(): void {
