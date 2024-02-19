@@ -28,10 +28,12 @@ mat-toolbar{
 }
 
 .navigation a { 
+  color: $primary-color3;
   margin-right: 80px;
   cursor: pointer;
   position: relative;
   font-weight: bold;
+  text-decoration: none;
 }
 .navigation a::before {
     content: '';
@@ -198,6 +200,7 @@ mat-toolbar{
   .arrow-icon{
     background-color: $primary-color2; 
     border-radius: 50%; 
+    color: $primary-color1;
     padding: 10px; 
     margin: 10px;
     cursor: pointer;
@@ -206,6 +209,7 @@ mat-toolbar{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 20px;
 }
 .aboutcard2, .aboutcard{
@@ -213,7 +217,7 @@ mat-toolbar{
   flex-direction: row;
   height: 250px;
   width: 80%;
-  box-shadow:  0 0 5px 0 $primary-color3; 
+  box-shadow:  0 0 5px 0 $primary-color2; 
   margin: 20px;
 }
 .aboutcard2{
