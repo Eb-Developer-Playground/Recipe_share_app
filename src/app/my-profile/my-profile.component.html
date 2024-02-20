@@ -10,14 +10,12 @@
                 <mat-toolbar   class="fixed-header">
                     <mat-toolbar-row>  
                     <div class="menunavs">
-                        <a mat-button href="#Home">Home</a>
-                        <a mat-button href="#Recommended">Recipes</a>
-                        <a mat-button href="#Testimonials">Testimonials</a>
-                        <a mat-button href="#AboutUs">AboutUs</a>
+                        <a mat-button href="#Home">MyProfile</a>
+                        <a mat-button href="#Recommended">MyRecipes</a>
+                        <a mat-button href="#Testimonials">AllRecipes</a>
                     </div>    
                     <div class="authbuttons">
-                        <button mat-stroked-button type="menu" class="loginbutton"  >Login</button> 
-                        <button mat-stroked-button type="menu" class="signupbutton" >Signup</button> 
+                        <button mat-stroked-button type="menu" class="loginbutton"  >Logout</button>                          
                     </div>         
     
                     </mat-toolbar-row>
@@ -25,4 +23,26 @@
             </div>
         </div>
         </header>
+    
+    <div class="myprofile">
+        <!--Side Div to show profile pic and bio-->
+        <div class="sidediv">
+            <mat-card>
+            <img mat-card-image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="profilepic">      
+                <p> <mat-icon> email</mat-icon> denis&#64;gmail.com</p>
+                <p><mat-icon> call</mat-icon> 0703103852</p>
+                <p><mat-icon> facebook</mat-icon> ~denisdelaki</p>
+                <button mat-stroked-button type="button">Edit Profile</button>
+            </mat-card>
+        </div>
+        <!--Div to show profile summary data and additional bio-->
+        <div class="summarydiv">
+            <mat-card>
+
+            </mat-card>
+            <mat-card>
+                
+            </mat-card>
+        </div>
+    </div>
 </div>
