@@ -122,6 +122,32 @@ mat-toolbar{
     display: flex;
 }
 .summarydiv{
-    border: 1px solid black;
     width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.bio{
+    margin: auto;
+    height: 100%;
+    width: 90%;
+    padding-bottom: 20px;
+    border-radius: 17px;
+    box-shadow: 3px 3px 3px 3px $primary-color2;
+}
+.summary h4, .bio h4{
+    margin: 10px auto;
+    text-align: center;
+}
+.summary p, .bio p{
+    margin: auto 20px;
+    border: 1px dotted $primary-color2;
+    padding: 10px;
+}
+.summary{
+    margin: 15px 50px; 
+    height: 100%;
+    width: 50%;
+    padding-bottom: 20px;
+    border-radius: 17px;
+    box-shadow: 3px 3px 3px 3px $primary-color2;
 }
