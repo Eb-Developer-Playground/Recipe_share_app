@@ -49,7 +49,8 @@ user:any ={
    {
     validator: this.passwordMatchValidator.bind(this)
   });
-
+//loading page 
+  loading = false;
   constructor(private _formBuilder: FormBuilder, private userService: UserService, private router: Router) {}
   // Get the labels on focus of the input field
   getFloatLabelValue(): FloatLabelType {
@@ -79,6 +80,21 @@ user:any ={
   // If either control is null, consider them not matching
   return { mismatch: true };
   }
+  //handle login navigation
+  navigateToLogin (){
+    this.loading = true;
+    console.log("loading")
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+      this.loading = false;
+    }, 3000);
+  }
+  checker(){
+    this.userService.getData().subscribe(data => {
+      console.log(data.user)
+     //check if the email already exists
+    });
+  };
   //handle data submission   
   onSubmit(){
   if (this.options.valid ) {
@@ -101,15 +117,17 @@ user:any ={
           password: password,
           passwordconfirm: passwordconfirm,
           };
-          //post the data to the server 
+          //post the data to the server          
           this.userService.createusers(userData).subscribe(
           res=>{
             console.log(res);
+            this.checker();
             this.users.push({
               username: res.username,
               email: res.email,
               password: res.password, 
               passwordconfirm: res.passwordconfirm})
+              this.loading = true;
               this.router.navigate(['/login'])
         })
         

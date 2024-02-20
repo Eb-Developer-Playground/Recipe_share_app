@@ -1,25 +1,11 @@
 {
   "user": [
     {
-      "id": "02de",
-      "username": "denis",
-      "email": "denisdelaki@gmail.com",
-      "password": "3333",
-      "passwordconfirm": "3333"
-    },
-    {
-      "id": "acf1",
+      "id": "74dd",
       "username": "denisdelaki",
-      "email": "kip@gmail.com",
-      "password": "1111",
-      "passwordconfirm": "1111"
-    },
-    {
-      "id": "a181",
-      "username": "sabina",
-      "email": "mil@com",
-      "password": "1111",
-      "passwordconfirm": "1121"
+      "email": "denisdelaki@gmail.com",
+      "password": "9999",
+      "passwordconfirm": "9999"
     }
   ]
 }

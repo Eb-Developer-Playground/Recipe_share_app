@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent  {
  constructor (private router :Router){}
 SignUp() {
   this.router.navigate(['/signup']);
@@ -20,12 +20,6 @@ SignUp() {
 Login() {
   this.router.navigate(['/login']);
 }
-  showContent = false;
 
-  ngOnInit(): void {
-    // Set a timeout to show the content after 3000 milliseconds (3 seconds)
-    setTimeout(() => {
-      this.showContent = true;
-    }, 3000);
-  }
+
 }
