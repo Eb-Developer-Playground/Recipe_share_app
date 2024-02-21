@@ -43,7 +43,7 @@ export class PopuppageComponent implements OnInit {
        this.userService.getData(userId).subscribe(userData => {
          // Set form values with fetched data
          this.editForm.patchValue({
-           username: userData.username,
+           username: userData?.username,
            email: userData?.email,
            address: userData?.profile?.address,
            telephone: userData?.profile?.telephone,
@@ -71,7 +71,7 @@ export class PopuppageComponent implements OnInit {
     if (this.editForm.valid) {
       const userId=localStorage.getItem('loggedInUserId');
       console.log(userId);
-      const userData = {
+      const updateduserData = {
         username: this.editForm.value.username,
         email: this.editForm.value.email,
         profile: {
@@ -82,8 +82,8 @@ export class PopuppageComponent implements OnInit {
           facebook: this.editForm.value.facebook
         }
       };
-      console.log(userData);
-      this.userService.updateUserData(userId, userData).subscribe(
+      console.log(updateduserData);
+      this.userService.updateUserData(userId, updateduserData).subscribe(
         (res) => {
           console.log(res);
           this.dialogRef.close();

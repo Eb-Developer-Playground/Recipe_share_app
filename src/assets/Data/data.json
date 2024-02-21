@@ -1,16 +1,11 @@
 {
   "user": [
     {
-      "username": "denisdelaki",
+      "id": "bbe3",
+      "username": "denis",
       "email": "denisdelaki@gmail.com",
-      "profile": {
-        "telephone": "0703103852",
-        "restaurant": "bonds",
-        "address": "33",
-        "profileurl": "url",
-        "facebook": "denis"
-      },
-      "id": "6e85"
+      "password": "0000",
+      "passwordconfirm": "0000"
     }
   ]
 }
