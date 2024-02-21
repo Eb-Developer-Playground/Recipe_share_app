@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators, FormsModule, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import {FloatLabelType, MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-popuppage',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule, MatFormFieldModule],
+  imports: [FormsModule,ReactiveFormsModule, MatFormFieldModule,MatCardModule],
   templateUrl: './popuppage.component.html',
   styleUrl: './popuppage.component.scss'
 })

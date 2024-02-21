@@ -1,4 +1,5 @@
 <div class="cardContent">
+    <mat-card class="popupcard">
     <form [formGroup]="editForm" (submit)="onSubmit()" >
       <!--Username label and input-->
       <div>
@@ -23,37 +24,63 @@
       </mat-form-field>
     </div>
 
-     <!--Password label and input-->
+     <!--Address label and input-->
     <div>
       <mat-form-field [floatLabel]="getFloatLabelValue()">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="Password"
-         name="password"  
-         formControlName="password" 
-         autocomplete="off" required>
+        <mat-label>Address</mat-label>
+        <input matInput type="text" placeholder="Address"
+         name="address"  
+         formControlName="address" 
+         autocomplete="off" >
       </mat-form-field>
     </div>
-
-     <!--Password confirmation label and input-->
+     <!--Restaurant label and input-->
+     <div>
+        <mat-form-field [floatLabel]="getFloatLabelValue()">
+          <mat-label>Restaurant</mat-label>
+          <input matInput type="text" placeholder="Restauant"
+           name="restaurant"  
+           formControlName="restaurant" 
+           autocomplete="off" >
+        </mat-form-field>
+      </div>
+     <!--profile label and input-->
+     <div>
+        <mat-form-field [floatLabel]="getFloatLabelValue()">
+          <mat-label>Profile Url</mat-label>
+          <input matInput type="text" placeholder="Profile Url"
+           name="profileurl"  
+           formControlName="profileurl" 
+           autocomplete="off" >
+        </mat-form-field>
+      </div>
+     <!-- Tel -->
     <div>
        <!--floatLabel allows the labels to move up on focus of the input field-->
         <mat-form-field [floatLabel]="getFloatLabelValue()">
-          <mat-label>Password Confirmation</mat-label>
-          <input matInput type="password" placeholder="confirm Password"
-           name="passwordconfirm" 
-           formControlName="passwordconfirm" 
-           autocomplete="off"  required>
+          <mat-label>Telephone number </mat-label>
+          <input matInput type="tel" placeholder=" Telephone number"
+           name="telephone" 
+           formControlName="telephone" 
+           autocomplete="off"  >
         </mat-form-field>
-        <p class="passmatch" *ngIf="options.hasError('mismatch')">
-          Passwords do not match.</p>
       </div>
-    <div class="signupbutton">
-      <button mat-stroked-button >SignUp</button>       
-    </div>
+      <!--Facebook-->
+        <div>
+       <!--floatLabel allows the labels to move up on focus of the input field-->
+        <mat-form-field [floatLabel]="getFloatLabelValue()">
+          <mat-label>Facebook username </mat-label>
+          <input matInput type="tel" placeholder=" Facebook username"
+           name="facebook" 
+           formControlName="facebook" 
+           autocomplete="off"  >
+        </mat-form-field>
+      </div>
+
     <div class="footer">
         <button mat-raised-button color="primary" (click)="save()">Save</button>
         <button mat-raised-button color="warn" (click)="close()">Cancel</button>
     </div>
     </form>
-
+</mat-card>
   </div>

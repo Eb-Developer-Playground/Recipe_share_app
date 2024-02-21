@@ -1,0 +1,16 @@
+$primary-color1: white;
+$primary-color2: maroon;
+$primary-color3: black;
+
+
+mat-form-field {
+ 
+    margin-left: 5%;
+}
+mat-card {
+    margin: auto;
+    margin-top: 7%;
+    color: $primary-color2;
+    height: 75vh ;
+    width: 100%;
+   }
