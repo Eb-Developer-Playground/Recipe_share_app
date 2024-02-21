@@ -2,17 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators, FormsModule, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import {FloatLabelType, MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogRef } from '@angular/material/dialog';
+
+
 
 @Component({
   selector: 'app-popuppage',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule, MatFormFieldModule,MatCardModule],
+  imports: [FormsModule,ReactiveFormsModule,MatInputModule, MatFormFieldModule,MatCardModule],
   templateUrl: './popuppage.component.html',
   styleUrl: './popuppage.component.scss'
 })
 export class PopuppageComponent implements OnInit {
-  
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,public dialogRef: MatDialogRef<PopuppageComponent>) { }
   floatLabelControl = new FormControl('auto' as FloatLabelType);
   editForm: FormGroup = this.formBuilder.group({
     floatLabel: this.floatLabelControl
@@ -45,8 +48,8 @@ export class PopuppageComponent implements OnInit {
     // Implement logic to save profile changes
     // Close the dialog
   }
-
-  close() {
-    // Close the dialog without saving
+  //close without saving 
+  close(): void {
+    this.dialogRef.close();
   }
 }

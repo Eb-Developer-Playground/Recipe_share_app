@@ -3,30 +3,30 @@
     <form [formGroup]="editForm" (submit)="onSubmit()" >
       <!--Username label and input-->
       <div>
-        <mat-form-field [floatLabel]="getFloatLabelValue()">
+        <mat-form-field floatLabel="auto">
           <mat-label>Username</mat-label>
           <input matInput  placeholder="Username" 
           name="username"
           formControlName="username" 
-          type="text"  required>
+          type="text"  >
         </mat-form-field>
       </div>
 
        <!--Email label and input-->
     <div>
-      <mat-form-field [floatLabel]="getFloatLabelValue()">
+      <mat-form-field floatLabel="auto">
         <mat-label>Email</mat-label>
         <input matInput  placeholder="Email e.g user@gmail.com" 
         name="email" 
         formControlName="email" 
-         autocomplete="off" required>
+         autocomplete="off" >
         <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
       </mat-form-field>
     </div>
   <div class="addresta">
   <!--Address label and input-->
   <div>
-    <mat-form-field [floatLabel]="getFloatLabelValue()">
+    <mat-form-field floatLabel="auto">
       <mat-label>Address</mat-label>
       <input matInput type="text" placeholder="Address"
        name="address"  
@@ -36,7 +36,7 @@
   </div>
    <!--Restaurant label and input-->
    <div>
-      <mat-form-field [floatLabel]="getFloatLabelValue()">
+      <mat-form-field floatLabel="auto">
         <mat-label>Restaurant</mat-label>
         <input matInput type="text" placeholder="Restauant"
          name="restaurant"  
@@ -48,7 +48,7 @@
    
      <!--profile label and input-->
      <div>
-        <mat-form-field [floatLabel]="getFloatLabelValue()">
+        <mat-form-field floatLabel="auto">
           <mat-label>Profile Url</mat-label>
           <input matInput type="text" placeholder="Profile Url"
            name="profileurl"  
@@ -60,7 +60,7 @@
        <!-- Tel -->
        <div>
         <!--floatLabel allows the labels to move up on focus of the input field-->
-         <mat-form-field [floatLabel]="getFloatLabelValue()">
+         <mat-form-field floatLabel="auto">
            <mat-label>Telephone number </mat-label>
            <input matInput type="tel" placeholder=" Telephone number"
             name="telephone" 
@@ -71,7 +71,7 @@
        <!--Facebook-->
          <div>
         <!--floatLabel allows the labels to move up on focus of the input field-->
-         <mat-form-field [floatLabel]="getFloatLabelValue()">
+         <mat-form-field floatLabel="auto">
            <mat-label>Facebook username </mat-label>
            <input matInput type="tel" placeholder=" Facebook username"
             name="facebook" 
@@ -82,8 +82,8 @@
       </div>
 
     <div class="footer">
-        <button mat-raised-button color="primary" (click)="save()">Save</button>
-        <button mat-raised-button color="warn" (click)="close()">Cancel</button>
+        <button mat-raised-button color="warn" class="close" (click)="close()">Cancel</button>
+        <button mat-raised-button color="primary" class="save" (click)="save()">Save</button>
     </div>
     </form>
 </mat-card>

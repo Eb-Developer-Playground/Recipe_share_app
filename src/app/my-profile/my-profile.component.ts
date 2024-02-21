@@ -19,7 +19,7 @@ export class MyProfileComponent {
   constructor(private dialog: MatDialog) {}
   edit() {
     const dialogRef = this.dialog.open(PopuppageComponent, {
-      width: '500px', 
+      width: '550px', 
        // Prevent closing by clicking outside or pressing ESC
       disableClose: true
     });
