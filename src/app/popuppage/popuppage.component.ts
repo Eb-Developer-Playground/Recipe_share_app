@@ -37,15 +37,23 @@ export class PopuppageComponent implements OnInit {
       profileurl: [''],
       facebook: ['']
     });
-    // Fetch user data and populate the form fields
-    const userId = localStorage.getItem('loggedInUserId');
-    if (userId) {
-      this.userService.getData(userId).subscribe(data => {
-        this.editForm.patchValue(data); // Set form values with user data
-      });
-    }
-  }
-
+     // Fetch user data and populate the form fields
+     const userId = localStorage.getItem('loggedInUserId');
+     if (userId) {
+       this.userService.getData(userId).subscribe(userData => {
+         // Set form values with fetched data
+         this.editForm.patchValue({
+           username: userData.username,
+           email: userData?.email,
+           address: userData?.profile?.address,
+           telephone: userData?.profile?.telephone,
+           restaurant: userData?.profile?.restaurant,
+           profileurl: userData?.profile?.profileurl,
+           facebook: userData?.profile?.facebook
+         });
+       });
+     }
+   }
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';
   }

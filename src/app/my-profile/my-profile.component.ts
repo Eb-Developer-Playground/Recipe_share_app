@@ -28,6 +28,8 @@ export class MyProfileComponent {
   }
   //fetch data from the server 
   ngOnInit(): void {
+    //access local storage only when running on the browser
+    if (typeof window !== 'undefined') {
     // Fetch data from the server when the component initializes
     const userId = localStorage.getItem('loggedInUserId');
     if (userId) {
@@ -41,6 +43,7 @@ export class MyProfileComponent {
       console.error('User ID not found in local storage');
     }
   }
+}
   //logout 
   Logout(){
     this.router.navigate(['/LandingPage']);

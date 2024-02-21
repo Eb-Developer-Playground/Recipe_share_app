@@ -1,15 +1,16 @@
 {
   "user": [
     {
-      "username": "deno",
-      "email": "",
+      "username": "denisdelaki",
+      "email": "denisdelaki@gmail.com",
       "profile": {
-        "telephone": "",
-        "restaurant": "",
-        "profileurl": "",
-        "facebook": ""
+        "telephone": "0703103852",
+        "restaurant": "bonds",
+        "address": "33",
+        "profileurl": "url",
+        "facebook": "denis"
       },
-      "id": "f972"
+      "id": "6e85"
     }
   ]
 }
