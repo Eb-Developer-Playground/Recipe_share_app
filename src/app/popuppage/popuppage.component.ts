@@ -37,6 +37,13 @@ export class PopuppageComponent implements OnInit {
       profileurl: [''],
       facebook: ['']
     });
+    // Fetch user data and populate the form fields
+    const userId = localStorage.getItem('loggedInUserId');
+    if (userId) {
+      this.userService.getData(userId).subscribe(data => {
+        this.editForm.patchValue(data); // Set form values with user data
+      });
+    }
   }
 
   getFloatLabelValue(): FloatLabelType {
