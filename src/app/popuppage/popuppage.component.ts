@@ -4,7 +4,8 @@ import {FloatLabelType, MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogRef } from '@angular/material/dialog';
-
+import { UserService } from '../user.service';
+import { AuthenticationService } from '../authentication.service';
 
 
 @Component({
@@ -15,15 +16,20 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrl: './popuppage.component.scss'
 })
 export class PopuppageComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder,public dialogRef: MatDialogRef<PopuppageComponent>) { }
+  constructor(private authService: AuthenticationService, private userService: UserService, private formBuilder: FormBuilder,public dialogRef: MatDialogRef<PopuppageComponent>) { }
   floatLabelControl = new FormControl('auto' as FloatLabelType);
   editForm: FormGroup = this.formBuilder.group({
     floatLabel: this.floatLabelControl
 
   })
   //form values initializiation
- email = new FormControl('', [Validators.required, Validators.email]);
+ email = new FormControl('', [ Validators.email]);
  username = new FormControl('');
+ address = new FormControl('');
+ telephone = new FormControl('');
+ restaurant = new FormControl('');
+ profileurl = new FormControl('');
+ facebook= new FormControl('');
   // Get the labels on focus of the input field
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';
@@ -44,9 +50,40 @@ export class PopuppageComponent implements OnInit {
   onSubmit(){
 
   }
-  save() {
-    // Implement logic to save profile changes
+     // Implement logic to save profile changes
     // Close the dialog
+
+ 
+    save() {
+      if (this.editForm.valid) {
+        const userId = this.authService.getUserId();
+        console.log(userId);
+        const userData = {
+          username: this.editForm.value.username,
+          email: this.editForm.value.email,
+          profile: {
+            telephone: this.editForm.value.telephone,
+            restaurant: this.editForm.value.restaurant,
+            profileurl: this.editForm.value.profileurl,
+            facebook: this.editForm.value.facebook
+          }
+        };
+        // Call the service method to update the user data in the database
+       this.userService.updateUserData(userId, userData).subscribe(
+          (res) => {
+            console.log(userId);
+            console.log(res);
+            // Close the dialog
+            this.dialogRef.close();
+          },
+          (error) => {
+            console.error(error);
+            // Handle error if needed
+          }
+        );
+      }
+    
+    
   }
   //close without saving 
   close(): void {

@@ -20,4 +20,8 @@ createusers(userData:any): Observable<any>{
   console.log(userData);
   return this.http.post<any>(this.apiUrl, userData);
 }
+//modify user data during profile editting 
+updateUserData(userId: any, userData: any): Observable<any> {
+  return this.http.put<any>(`${this.apiUrl}/${userId}`, userData);
+}
 }

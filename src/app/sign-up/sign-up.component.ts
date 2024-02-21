@@ -31,7 +31,13 @@ user:any ={
   username: "",
   email: "",
   password: "",
-  passwordconfirm: ""
+  passwordconfirm: "",
+  profile: {
+    telephone: "",
+    restaurant: "",
+    profileurl: "",
+    facebook: ""
+  }
 }
 
 
