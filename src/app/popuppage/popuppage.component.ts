@@ -54,6 +54,8 @@ export class PopuppageComponent implements OnInit {
 
   save() {
     if (this.editForm.valid) {
+      const userId=localStorage.getItem('loggedInUserId');
+      console.log(userId);
       const userData = {
         username: this.editForm.value.username,
         email: this.editForm.value.email,
@@ -65,7 +67,7 @@ export class PopuppageComponent implements OnInit {
         }
       };
       console.log(userData);
-      this.userService.updateUserData(userData).subscribe(
+      this.userService.updateUserData(userId, userData).subscribe(
         (res) => {
           console.log(res);
           this.dialogRef.close();
