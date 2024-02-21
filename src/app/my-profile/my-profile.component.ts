@@ -7,10 +7,11 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { PopuppageComponent } from '../popuppage/popuppage.component';
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-my-profile',
   standalone: true,
-  imports: [CommonModule, MatMenuModule,MatToolbarModule, MatCardModule,MatIconModule],
+  imports: [CommonModule,RouterModule, MatMenuModule,MatToolbarModule, MatCardModule,MatIconModule],
   templateUrl: './my-profile.component.html',
   styleUrl: './my-profile.component.scss'
 })
@@ -18,7 +19,7 @@ export class MyProfileComponent {
   constructor(private dialog: MatDialog) {}
   edit() {
     const dialogRef = this.dialog.open(PopuppageComponent, {
-      width: '400px', 
+      width: '500px', 
        // Prevent closing by clicking outside or pressing ESC
       disableClose: true
     });

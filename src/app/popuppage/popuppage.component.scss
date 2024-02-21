@@ -3,9 +3,16 @@ $primary-color2: maroon;
 $primary-color3: black;
 
 
-mat-form-field {
- 
-    margin-left: 5%;
+mat-form-field input {
+    background-color: rgb(243, 238, 238);
+    border: none;
+    height: 30px;
+    margin: auto;
+    width: 100%;
+    padding-right: 10px;
+}
+mat-form-field input:focus{
+    border: 1px solid $primary-color2;
 }
 mat-card {
     margin: auto;
@@ -13,4 +20,8 @@ mat-card {
     color: $primary-color2;
     height: 75vh ;
     width: 100%;
+   }
+   .telfaceb,.addresta{
+    display: flex;
+    flex-direction: row;
    }
