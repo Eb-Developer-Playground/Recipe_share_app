@@ -16,12 +16,16 @@ import { RouterModule } from '@angular/router';
   styleUrl: './my-profile.component.scss'
 })
 export class MyProfileComponent {
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog,private router: Router) {}
   edit() {
     const dialogRef = this.dialog.open(PopuppageComponent, {
       width: '550px', 
        // Prevent closing by clicking outside or pressing ESC
       disableClose: true
     });
+  }
+  //logout 
+  Logout(){
+    this.router.navigate(['/LandingPage']);
   }
 }

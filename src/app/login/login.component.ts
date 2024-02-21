@@ -77,9 +77,13 @@ export class LoginComponent {
           this.userService.getData().subscribe(data => {
             console.log('Data from service:', data);
           // Check if the entered credentials match the data from the server
-          const userExists = data.some((user: any) => user.email === email && user.password === password);
+          const userExists = data.find((user: any) => user.email === email && user.password === password);
           if (userExists) {
             //successful login 
+            console.log(userExists.id)
+            const loggedInUserId=userExists.id
+            localStorage.setItem('loggedInUserId', loggedInUserId);
+            console.log(loggedInUserId)
             this.router.navigate(['/myprofile']);
           } else {
             alert('Invalid credentials');

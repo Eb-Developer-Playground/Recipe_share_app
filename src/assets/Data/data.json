@@ -6,6 +6,34 @@
       "email": "denisdelaki@gmail.com",
       "password": "9999",
       "passwordconfirm": "9999"
+    },
+    {
+      "id": "5a6c",
+      "username": "shabel",
+      "email": "shabel@gmail",
+      "password": "1111",
+      "passwordconfirm": "1111"
+    },
+    {
+      "id": "8101",
+      "username": "shabel",
+      "email": "shabel@gmail.com",
+      "password": "5555",
+      "passwordconfirm": "5555"
+    },
+    {
+      "id": "bead",
+      "username": "denis",
+      "email": "dkipyegon@gmail.com",
+      "password": "4444",
+      "passwordconfirm": "4444"
+    },
+    {
+      "id": "c71e",
+      "username": "cynthia",
+      "email": "cynthia@gmail.com",
+      "password": "8888",
+      "passwordconfirm": "8888"
     }
   ]
 }
