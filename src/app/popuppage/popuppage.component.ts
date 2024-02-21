@@ -62,6 +62,7 @@ export class PopuppageComponent implements OnInit {
         profile: {
           telephone: this.editForm.value.telephone,
           restaurant: this.editForm.value.restaurant,
+          address: this.editForm.value.address,
           profileurl: this.editForm.value.profileurl,
           facebook: this.editForm.value.facebook
         }
@@ -71,6 +72,8 @@ export class PopuppageComponent implements OnInit {
         (res) => {
           console.log(res);
           this.dialogRef.close();
+          //reload the page to update the data 
+          window.location.reload();
         },
         (error) => {
           console.error(error);

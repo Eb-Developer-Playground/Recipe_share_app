@@ -1,5 +1,15 @@
 {
   "user": [
-
+    {
+      "username": "deno",
+      "email": "",
+      "profile": {
+        "telephone": "",
+        "restaurant": "",
+        "profileurl": "",
+        "facebook": ""
+      },
+      "id": "f972"
+    }
   ]
 }

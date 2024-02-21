@@ -11,8 +11,14 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 ///get users from the server 
-  getData(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  getData(userId?: string): Observable<any> {
+    if (userId) {
+      // Fetch data for a single user
+      return this.http.get<any>(`${this.apiUrl}${userId}`);
+    } else {
+      // Fetch data for multiple users
+      return this.http.get<any>(this.apiUrl);
+    }
   }
 //create users during registration 
 

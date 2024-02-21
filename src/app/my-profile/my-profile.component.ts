@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PopuppageComponent } from '../popuppage/popuppage.component';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { UserService } from '../user.service';
 @Component({
   selector: 'app-my-profile',
   standalone: true,
@@ -16,13 +17,29 @@ import { RouterModule } from '@angular/router';
   styleUrl: './my-profile.component.scss'
 })
 export class MyProfileComponent {
-  constructor(private dialog: MatDialog,private router: Router) {}
+  userData: any;
+  constructor(private userService:UserService, private dialog: MatDialog,private router: Router) {}
   edit() {
     const dialogRef = this.dialog.open(PopuppageComponent, {
       width: '550px', 
        // Prevent closing by clicking outside or pressing ESC
       disableClose: true
     });
+  }
+  //fetch data from the server 
+  ngOnInit(): void {
+    // Fetch data from the server when the component initializes
+    const userId = localStorage.getItem('loggedInUserId');
+    if (userId) {
+      // Fetch user data based on user ID
+      this.userService.getData(userId).subscribe(data => {
+        // Process the fetched user data here
+        console.log(data);
+        this.userData=data;
+      });
+    } else {
+      console.error('User ID not found in local storage');
+    }
   }
   //logout 
   Logout(){
