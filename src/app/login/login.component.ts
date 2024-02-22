@@ -39,6 +39,7 @@ export class LoginComponent {
     hideRequired: this.hideRequiredControl,
     floatLabel: this.floatLabelControl,
   });
+  loading= false;
 
   constructor(private _formBuilder: FormBuilder,private router: Router, private userService: UserService,) {
     this.options = this._formBuilder.group({
@@ -83,8 +84,12 @@ export class LoginComponent {
             console.log(userExists.id)
             const loggedInUserId=userExists.id
             localStorage.setItem('loggedInUserId', loggedInUserId);
-            console.log(loggedInUserId)
-            this.router.navigate(['/myprofile']);
+            console.log(loggedInUserId)            
+            this.loading = true;
+            setTimeout(() => {
+              this.router.navigate(['/myprofile']);
+              this.loading = false;
+            }, 1000);
           } else {
             alert('Invalid credentials');
           }

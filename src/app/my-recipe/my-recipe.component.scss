@@ -36,6 +36,13 @@ $primary-color3: black;
     .navigation a:hover::before {
       width: 100%;
     }
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        width: 80%;
+        margin: auto;
+      }
   .menunavs {
     display: flex;
     justify-content: space-evenly;
@@ -43,4 +50,24 @@ $primary-color3: black;
   mat-toolbar{
     background-color: $primary-color1;
     font-size: large;
+}
+.authbuttons {
+    display: flex;
+    margin-left: auto; 
+    font-size: large;
+  }
+  .navigation .loginbutton{
+  height: 30px;
+  width: 50px;
+  border: none;
+  color: $primary-color1;
+  background-color: $primary-color2;
+}
+.authbuttons  .loginbutton {
+    margin-left: 20px;
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 17px;
+    transition: background-color 0.3s ease;
 }

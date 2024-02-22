@@ -1,4 +1,4 @@
-<div id="loginbody">
+<div id="loginbody" *ngIf="!loading">
   <mat-card class="loginCard">
     <div>
       <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo"/>
@@ -37,5 +37,7 @@
     </div>
   </mat-card>
 </div>
-
+<div class="loading" *ngIf="loading">
+  <p>Loading...</p>
+</div>
   

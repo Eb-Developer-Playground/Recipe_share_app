@@ -94,7 +94,7 @@ user:any ={
     setTimeout(() => {
       this.router.navigate(['/login']);
       this.loading = false;
-    }, 3000);
+    }, 1000);
   }
   checker(){
     this.userService.getData().subscribe(data => {
