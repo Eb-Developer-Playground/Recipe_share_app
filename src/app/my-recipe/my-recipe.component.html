@@ -34,13 +34,15 @@
              formControlName="search" 
              autocomplete="off"  ><span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
           </mat-form-field>
-          <mat-form-field floatLabel="auto">
-            <input matInput type="text" 
-             placeholder="Filter By"
-             name="filter" 
-             formControlName="filter" 
-             autocomplete="off"  >
-          </mat-form-field> 
+          <mat-form-field floatLabel="auto" class="filtercontainer">           
+            <input matInput type="text"
+                    class="filter"
+                   placeholder="Filter By"
+                   name="filter"
+                   formControlName="filter"
+                   autocomplete="off">
+                   <mat-icon  class="dropicon">arrow_drop_down_circle</mat-icon>
+          </mat-form-field>
     </div>
         <!--recipes display section-->     
     <div class="recipedisplay">

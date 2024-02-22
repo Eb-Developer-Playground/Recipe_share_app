@@ -87,7 +87,6 @@ mat-toolbar{
 }
 .search{
   width: 40%;
-  border: 1px solid black;
 }
 .searchinput{
   margin-right: 10px;
@@ -107,4 +106,22 @@ mat-toolbar{
   background-color: $primary-color2;
   color: $primary-color1;
   font-size: large;
+}
+.filtercontainer{
+  position: relative;
+}
+.filter{
+  height: 35px;
+  width: 60%;
+  padding-left: 10px;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  box-shadow: 2px 0px 2px 2px $primary-color2;
+}
+.dropicon{
+  position: absolute;
+  color: $primary-color2;
+  top: 30px;
+  left: 90px;
 }
