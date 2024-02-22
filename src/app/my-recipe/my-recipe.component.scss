@@ -68,3 +68,43 @@ mat-toolbar{
   background-color: $primary-color2;
   color: $primary-color1;
 }
+//recipes sections
+.recipes{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+}
+.recipecontrol {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.newrecipe{
+
+  margin: auto 10px;
+}
+.search{
+  width: 40%;
+  border: 1px solid black;
+}
+.searchinput{
+  margin-right: 10px;
+  height: 35px;
+  width: 50%;
+  border: none;
+  font-weight: bold;
+  font-size: large;
+  box-shadow: 2px 0px 2px 2px $primary-color2;
+  //border-radius: 17px;
+}
+.searchbutton{
+  height: 35px;
+  width: 25%;
+  border: none;
+  border-radius: 10px;
+  background-color: $primary-color2;
+  color: $primary-color1;
+  font-size: large;
+}

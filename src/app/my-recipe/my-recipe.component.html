@@ -23,21 +23,28 @@
             </div>
         </div>
         </header>
-<div>
-        <button mat-stroked-button type="button">New Recipe <span><mat-icon>create_new_folder</mat-icon></span></button>
-        <mat-form-field floatLabel="auto">
-            <input matInput type="search" placeholder=" Search..."
+        <!--myrecipe section-->
+<div class="recipes">
+    <!--Upper section-->
+    <div class="recipecontrol">
+        <button mat-stroked-button type="button" class="newrecipe">New Recipe <span><mat-icon>create_new_folder</mat-icon></span></button>
+        <mat-form-field floatLabel="auto" class="search">
+            <input matInput type="search" class="searchinput" placeholder=" Search..."
              name="search" 
              formControlName="search" 
-             autocomplete="off"  ><span><button mat-stroked-button type="submit">Search</button></span>             
+             autocomplete="off"  ><span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
           </mat-form-field>
           <mat-form-field floatLabel="auto">
             <input matInput type="text" 
-            placeholder="Filter By"
+             placeholder="Filter By"
              name="filter" 
-             formControlName="search" 
+             formControlName="filter" 
              autocomplete="off"  >
-          </mat-form-field>        
-    <div></div>
+          </mat-form-field> 
+    </div>
+        <!--recipes display section-->     
+    <div class="recipedisplay">
+
+    </div>
 </div>
 </div>
