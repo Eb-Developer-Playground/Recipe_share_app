@@ -14,60 +14,57 @@ $primary-color3: black;
   height: 70px;
   width: 80px;
 }
-.navigation a { 
-    color: $primary-color3;
-    margin-right: 80px;
-    cursor: pointer;
-    position: relative;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  .navigation a::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: $primary-color2;
-      transition: width 0.3s ease;
-    }
-    
-    .navigation a:hover::before {
-      width: 100%;
-    }
-    .navigation {
-        display: flex;
-        justify-content: space-between;
-        align-items: center; 
-        width: 80%;
-        margin: auto;
-      }
-  .menunavs {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  mat-toolbar{
+mat-toolbar{
     background-color: $primary-color1;
     font-size: large;
 }
-.authbuttons {
-    display: flex;
-    margin-left: auto; 
-    font-size: large;
-  }
-  .navigation .loginbutton{
-  height: 30px;
-  width: 50px;
-  border: none;
-  color: $primary-color1;
-  background-color: $primary-color2;
+.navigation{
+  width: 70%;
+  margin-left: auto;
+  padding-right: 20px;
 }
-.authbuttons  .loginbutton {
-    margin-left: 20px;
-    width: 80px;
-    height: 40px;
-    border: none;
-    border-radius: 17px;
-    transition: background-color 0.3s ease;
+.fixed-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+.menunavs{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+.menunavs a{
+  color: $primary-color3;
+  margin-right: 80px;
+  cursor: pointer;
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menunavs a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $primary-color2;
+  transition: width 0.3s ease;
+}
+///an underline that runs below the menu links on hover
+.menunavs a:hover::before {
+  width: 100%;
+}
+.loginbutton{
+  margin-left: 20px;
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 17px;
+  transition: background-color 0.3s ease;
+  background-color: $primary-color2;
+  color: $primary-color1;
 }
