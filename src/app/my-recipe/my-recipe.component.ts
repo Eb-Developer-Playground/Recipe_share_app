@@ -9,18 +9,27 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { PopNewrecipePageComponent } from '../pop-newrecipe-page/pop-newrecipe-page.component';
 import { MatDialog } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-my-recipe',
   standalone: true,
-  imports: [RouterModule,MatMenuModule,MatToolbarModule,MatCardModule,MatFormFieldModule,MatIconModule],
+  imports: [ReactiveFormsModule,RouterModule,MatMenuModule,MatToolbarModule,MatCardModule,MatFormFieldModule,MatIconModule],
   templateUrl: './my-recipe.component.html',
   styleUrl: './my-recipe.component.scss'
 })
 export class MyRecipeComponent implements OnInit {
-  constructor( private dialog: MatDialog, private userService: UserService, private router: Router){}
+  search!: FormGroup;
+  filter!: FormGroup;
+  constructor(private formBuilder:FormBuilder, private dialog: MatDialog, private userService: UserService, private router: Router){}
   //fetch My recipes from the server when user visit the page 
   //fetch data from the server 
   ngOnInit(): void {
+    this.search = this.formBuilder.group({
+      search: ['']
+    })
+    this.filter = this.formBuilder.group({
+      filter: ['']
+    })
   }
   //logout function 
   Logout(){

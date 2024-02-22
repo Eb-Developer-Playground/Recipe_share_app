@@ -1,1 +1,64 @@
-<p>pop-newrecipe-page works!</p>
+<div class="cardContent">
+    <mat-card class="popupcard">
+        <form [formGroup]="newRecipeForm"  >
+            <!--Title label and input-->
+            <div>
+                <mat-form-field >
+                    <mat-label floatLabel="auto">Title</mat-label>
+                    <input matInput  placeholder="Title" 
+                        name="title"
+                        formControlName="Title" 
+                        type="text"  >
+                </mat-form-field>
+            </div>
+
+        <!--Category label and input-->
+            <div>
+                <mat-form-field >
+                    <mat-label floatLabel="auto">Recipe Category</mat-label>
+                    <input matInput  placeholder="Category" 
+                        name="category" 
+                        formControlName="Category" 
+                        autocomplete="off" >
+                </mat-form-field>
+            </div>
+
+            <!--Ingredients label and input-->
+            <div>
+            <mat-form-field >
+                    <mat-label floatLabel="auto">Recipe Ingredients</mat-label>
+                    <input matInput type="text" placeholder="Ingredients"
+                        name="ingredients"  
+                        formControlName="ingredients" 
+                        autocomplete="off" >
+            </mat-form-field>
+            </div>
+            <!--Recipe Instruction label and input-->
+            <div>
+                <mat-form-field >
+                    <mat-label floatLabel="auto">Recipe Instruction</mat-label>
+                    <input matInput type="text" placeholder="Instruction"
+                        name="instruction"  
+                        formControlName="instruction" 
+                        autocomplete="off" >
+                </mat-form-field>
+            </div>  
+    
+            <!--Recipe Url Label and input-->
+            <div>
+                <mat-form-field >
+                    <mat-label floatLabel="auto">Recipe Image Url</mat-label>
+                    <input matInput type="text" placeholder="Recipe Image Url"
+                        name="recipimgurl"  
+                        formControlName="recipimgurl" 
+                        autocomplete="off" >
+                </mat-form-field>
+            </div>
+
+            <div class="footer">
+                <button mat-raised-button color="warn" class="close" (click)="close()">Cancel</button>
+                <button mat-raised-button color="primary" class="save" (click)="Add()">Add</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

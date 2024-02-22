@@ -28,21 +28,25 @@
     <!--Upper section-->
     <div class="recipecontrol">
         <button mat-stroked-button type="button" class="newrecipe" (click)="newRecipe()">New Recipe <span><mat-icon>create_new_folder</mat-icon></span></button>
-        <mat-form-field floatLabel="auto" class="search">
-            <input matInput type="search" class="searchinput" placeholder=" Search..."
-             name="search" 
-             formControlName="search" 
-             autocomplete="off"  ><span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
-          </mat-form-field>
-          <mat-form-field floatLabel="auto" class="filtercontainer">           
-            <input matInput type="text"
-                    class="filter"
-                   placeholder="Filter By"
-                   name="filter"
-                   formControlName="filter"
-                   autocomplete="off">
-                   <mat-icon  class="dropicon">arrow_drop_down_circle</mat-icon>
-          </mat-form-field>
+        <form [formGroup]="search" class="searchform"> 
+            <mat-form-field floatLabel="auto" class="search">
+                <input matInput type="search" class="searchinput" placeholder=" Search..."
+                name="search" 
+                formControlName="search" 
+                autocomplete="off"  ><span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
+            </mat-form-field>
+        </form>
+        <form [formGroup]="filter" class="filterform">
+            <mat-form-field floatLabel="auto" class="filtercontainer">           
+                <input matInput type="text"
+                        class="filter"
+                    placeholder="Filter By"
+                    name="filter"
+                    formControlName="filter"
+                    autocomplete="off">
+                    <mat-icon  class="dropicon">arrow_drop_down_circle</mat-icon>
+            </mat-form-field>
+        </form>
     </div>
         <!--recipes display section-->     
     <div class="recipedisplay">
