@@ -18,16 +18,24 @@ mat-toolbar{
     background-color: $primary-color1;
     font-size: large;
 }
-.navigation .loginbutton,
-.navigation .signupbutton {
-  height: 30px;
-  width: 50px;
-  border: none;
-  color: $primary-color1;
-  background-color: $primary-color2;
+.navigation{
+  width: 70%;
+  margin-left: auto;
+  padding-right: 20px;
 }
-
-.navigation a { 
+.fixed-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+.menunavs{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+.menunavs a{
   color: $primary-color3;
   margin-right: 80px;
   cursor: pointer;
@@ -35,48 +43,30 @@ mat-toolbar{
   font-weight: bold;
   text-decoration: none;
 }
-.navigation a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: $primary-color2;
-    transition: width 0.3s ease;
-  }
-  
-  .navigation a:hover::before {
-    width: 100%;
-  }
-.menunavs {
-  display: flex;
-  justify-content: space-evenly;
-}
 
-.authbuttons {
-  display: flex;
-  margin-left: auto; 
-  font-size: large;
+.menunavs a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $primary-color2;
+  transition: width 0.3s ease;
 }
-.authbuttons  .signupbutton,.authbuttons  .loginbutton {
-    margin-left: 20px;
-    width: 80px;
-    height: 40px;
-    border: none;
-    border-radius: 17px;
-    transition: background-color 0.3s ease;
+///an underline that runs below the menu links on hover
+.menunavs a:hover::before {
+  width: 100%;
 }
-.navigation .loginbutton:hover,
-.navigation .signupbutton:hover {
-  background-color: darken($primary-color2, 20%); 
-}
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; 
-  width: 80%;
-  margin: auto;
+.loginbutton{
+  margin-left: 20px;
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 17px;
+  transition: background-color 0.3s ease;
+  background-color: $primary-color2;
+  color: $primary-color1;
 }
 //my profile section 
 .myprofile{
