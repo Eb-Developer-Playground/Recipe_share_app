@@ -4,20 +4,20 @@ $primary-color3: black;
 
 
 mat-form-field  {
-margin: auto 20px;
+margin: auto 10px;
 }
 
 mat-card {
     margin: auto;
     margin-top: 7%;
     color: $primary-color2;
-    height: 75vh ;
+    height: 60vh ;
     width: 100%;
    }
-   .telfaceb,.addresta{
+ .titlecate{
     display: flex;
     flex-direction: row;
-   }
+ }
    .footer{
     display: flex;
     justify-content: center;

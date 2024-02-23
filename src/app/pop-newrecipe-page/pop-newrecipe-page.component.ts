@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators, FormsModule, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import {FloatLabelType, MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pop-newrecipe-page',
@@ -11,21 +12,30 @@ import { MatInputModule } from '@angular/material/input';
   templateUrl: './pop-newrecipe-page.component.html',
   styleUrl: './pop-newrecipe-page.component.scss'
 })
-export class PopNewrecipePageComponent {
+export class PopNewrecipePageComponent implements OnInit {
+
+  //floatLabelControl = new FormControl('auto' as FloatLabelType);
   newRecipeForm!: FormGroup;
-  floatLabelControl = new FormControl('auto' as FloatLabelType);
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,public dialogRef: MatDialogRef<PopNewrecipePageComponent>) {}
 
   ngOnInit(): void {
-    // Initialize your form controls here
     this.newRecipeForm = this.formBuilder.group({
-      Title: ['', Validators.required],
-      Category: ['', Validators.required],
-      ingredients: ['', Validators.required],
-      instruction: ['', Validators.required],
-      recipimgurl: ['', Validators.required],
-    });
+      title: ['',Validators.required],
+      category: [''],
+      ingredients: [''],
+      instruction: [''],
+      recipimgurl: ['']
+    })
   }
-  Add(){}
-  close(){}
+  
+  Add() { 
+  alert("add")
+  console.log(this.newRecipeForm);
+  const title=this.newRecipeForm.get('title')?.value;
+  console.log(title);
+  }
+
+  close(){
+    this.dialogRef.close();
+  }
 }
