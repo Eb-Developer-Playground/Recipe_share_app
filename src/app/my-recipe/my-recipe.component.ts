@@ -49,6 +49,13 @@ recipeData: any;
         console.error('Error fetching data:', error); 
       });
   }
+  //search function 
+  searchRecipes() {
+    const searchTerm = this.search.value.search;
+    this.RecipesService.searchRecipes(searchTerm).subscribe((searchResult) => {
+      console.log('Search Result:', searchResult);
+    })
+  }
   //logout function 
   Logout(){
     this.router.navigate(['/LandingPage']);

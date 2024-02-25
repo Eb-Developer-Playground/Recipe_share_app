@@ -28,7 +28,7 @@
     <!--Upper section-->
     <div class="recipecontrol">
         <button mat-stroked-button type="button" class="newrecipe" (click)="addRecipe()">New Recipe <span><mat-icon>create_new_folder</mat-icon></span></button>
-        <form [formGroup]="search" class="searchform"> 
+        <form [formGroup]="search" (submit)="searchRecipes" class="searchform"> 
             <mat-form-field floatLabel="auto" class="search">
                 <input matInput type="search" class="searchinput" placeholder=" Search..."
                 name="search" 

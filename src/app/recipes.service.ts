@@ -24,4 +24,9 @@ createRecipes(FormData:any): Observable<any>{
   console.log(FormData);
   return this.http.post<any>(this.apiUrl, FormData);
 }
+//search recipes 
+searchRecipes(searchTerm: string): Observable<any> {
+  console.log(searchTerm);
+  return this.http.get<any>(`${this.apiUrl}/search?query=${searchTerm}`);
+}
 }

@@ -1,1 +1,154 @@
-/*# sourceMappingURL=all-recipes.component.css.map */
+.header {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  display: flex;
+  margin: 10px 20px 10px 20px;
+  height: 70px;
+  width: 80px;
+}
+
+mat-toolbar {
+  background-color: white;
+  font-size: large;
+}
+
+.navigation {
+  width: 70%;
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.fixed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.menunavs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.menunavs a {
+  color: black;
+  margin-right: 80px;
+  cursor: pointer;
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menunavs a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: maroon;
+  transition: width 0.3s ease;
+}
+
+.menunavs a:hover::before {
+  width: 100%;
+}
+
+.loginbutton {
+  margin-left: 20px;
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 17px;
+  transition: background-color 0.3s ease;
+  background-color: maroon;
+  color: white;
+}
+
+.recipes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.recipecontrol {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.search {
+  width: 100%;
+}
+
+.searchinput {
+  margin-right: 10px;
+  height: 35px;
+  width: 30%;
+  border: none;
+  font-weight: bold;
+  font-size: large;
+  box-shadow: 2px 0px 2px 2px maroon;
+}
+
+.searchbutton {
+  height: 35px;
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  background-color: maroon;
+  color: white;
+  font-size: large;
+}
+
+.filtercontainer {
+  position: relative;
+}
+
+.filter {
+  height: 35px;
+  width: 60%;
+  padding-left: 10px;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  box-shadow: 2px 0px 2px 2px maroon;
+}
+
+.dropicon {
+  position: absolute;
+  color: maroon;
+  top: 30px;
+  left: 90px;
+}
+
+.searchform {
+  width: 50%;
+}
+
+.filterform {
+  margin-right: auto;
+}
+
+.recipedisplay {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 20px;
+}
+
+.recipecard {
+  height: 35vh;
+  width: 20%;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 3px 3px maroon;
+}/*# sourceMappingURL=all-recipes.component.css.map */

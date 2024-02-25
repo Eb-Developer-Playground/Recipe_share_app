@@ -1,3 +1,7 @@
+$primary-color1: white;
+$primary-color2: maroon;
+$primary-color3: black;
+
 .header {
   background-color: white;
   display: flex;
@@ -69,4 +73,78 @@ mat-toolbar {
   transition: background-color 0.3s ease;
   background-color: maroon;
   color: white;
+}
+
+//recipe section 
+//recipes sections
+.recipes{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+}
+.recipecontrol {
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.search{
+  width: 100%;
+}
+.searchinput{
+  margin-right: 10px;
+  height: 35px;
+  width: 30%;
+  border: none;
+  font-weight: bold;
+  font-size: large;
+  box-shadow: 2px 0px 2px 2px $primary-color2;
+  //border-radius: 17px;
+}
+.searchbutton{
+  height: 35px;
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  background-color: $primary-color2;
+  color: $primary-color1;
+  font-size: large;
+}
+.filtercontainer{
+  position: relative;
+}
+.filter{
+  height: 35px;
+  width: 60%;
+  padding-left: 10px;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  box-shadow: 2px 0px 2px 2px $primary-color2;
+}
+.dropicon{
+  position: absolute;
+  color: $primary-color2;
+  top: 30px;
+  left: 90px;
+}
+.searchform{
+  width: 50%;
+}
+.filterform{
+  margin-right: auto;
+}
+//recipe rendering 
+.recipedisplay{
+  display: flex;
+  flex-direction: row;
+  margin: 10px 20px ;
+}
+.recipecard{
+ height: 35vh;
+ width: 20%;
+ margin: 10px;
+ border-radius: 20px;
+ box-shadow: 3px 3px 3px 3px $primary-color2;
 }

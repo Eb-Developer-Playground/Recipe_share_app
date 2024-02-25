@@ -3,7 +3,7 @@ $primary-color2: maroon;
 $primary-color3: black;
 $primary-backgroud: 'https://images.pexels.com/photos/4552113/pexels-photo-4552113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 
-#loginbody{
+#loginbody {
     background-image: url($primary-backgroud);
     background-size: cover;
     background-position: center;
@@ -15,47 +15,77 @@ $primary-backgroud: 'https://images.pexels.com/photos/4552113/pexels-photo-45521
 }
 
 mat-card {
- display: flex;
- justify-content: center;
- margin: auto;
- margin-top: 10%;
- color: $primary-color2;
- height: 50vh ;
- width: 25%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10%;
+    color: $primary-color2;
+    //width: 80%; 
 }
-
 
 mat-form-field {
     width: 90%;
     margin-left: 5%;
-
 }
-.loginbutton{
+
+.loginbutton {
     display: flex;
     justify-content: center;
     padding: 0 8px 0 0;
     color: $primary-color1;
 }
-.loginbutton button{
+
+.loginbutton button {
     color: $primary-color1;
     background-color: $primary-color2;
     border: none;
-    width: 70%; 
+    width: 70%;
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
-    margin: 10px auto auto auto;
     height: 70px;
-    width: 80px;
+    max-width: 80%; 
+    margin: 5% auto;    
 }
-.footer{
+.logo img {
+    max-width: 100%; 
+    height: auto; 
+}
+.footer {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     color: $primary-color3;
 }
+
 .footer p span {
     text-decoration: underline;
     cursor: pointer;
     color: $primary-color2;
 }
+
+/* Media queries for responsiveness */
+@media only screen and (min-width: 1024px) {
+    mat-card {
+        width: 30%; /* Adjusted width for smaller screens */
+    }
+}
+@media only screen and (max-width: 1024px) {
+    mat-card {
+        width: 50%; /* Adjusted width for smaller screens */
+    }
+}
+@media only screen and (max-width: 768px) {
+    mat-card {
+        width: 50%; /* Adjusted width for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    mat-card {
+        width: 60%; /* Adjusted width for even smaller screens */
+    }
+}
+
+

@@ -15,8 +15,6 @@ mat-card {
   margin: auto;
   margin-top: 10%;
   color: maroon;
-  height: 50vh;
-  width: 25%;
 }
 
 mat-form-field {
@@ -41,9 +39,14 @@ mat-form-field {
 .logo {
   display: flex;
   align-items: center;
-  margin: 10px auto auto auto;
   height: 70px;
-  width: 80px;
+  max-width: 80%;
+  margin: 5% auto;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
 }
 
 .footer {
@@ -56,4 +59,26 @@ mat-form-field {
   text-decoration: underline;
   cursor: pointer;
   color: maroon;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (min-width: 1024px) {
+  mat-card {
+    width: 30%; /* Adjusted width for smaller screens */
+  }
+}
+@media only screen and (max-width: 1024px) {
+  mat-card {
+    width: 50%; /* Adjusted width for smaller screens */
+  }
+}
+@media only screen and (max-width: 768px) {
+  mat-card {
+    width: 50%; /* Adjusted width for smaller screens */
+  }
+}
+@media only screen and (max-width: 600px) {
+  mat-card {
+    width: 60%; /* Adjusted width for even smaller screens */
+  }
 }/*# sourceMappingURL=login.component.css.map */
