@@ -1,0 +1,12 @@
+<div>
+    <mat-card>
+        <form [formGroup]="recipeForm" (submit)="Add($event)">        
+                    <mat-label>Title</mat-label>
+                    <input  placeholder="Title" 
+                    name="title" 
+                    formControlName="title"
+                    type="text"  required>
+                <button mat-raised-button color="primary" class="save" type="submit">Add</button>   
+        </form>  
+    </mat-card>
+</div>

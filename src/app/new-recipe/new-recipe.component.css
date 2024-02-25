@@ -1,0 +1,61 @@
+form {
+  height: 100%;
+}
+
+.titlecate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.titlecate mat-card {
+  margin: auto;
+  margin-top: 7%;
+  color: maroon;
+  height: 70vh;
+  width: 100%;
+}
+
+mat-form-field {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+}
+
+mat-form-field input {
+  margin: auto;
+  height: 50px;
+  width: 75%;
+  margin: 10px;
+  background-color: rgb(241, 240, 240);
+  border: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.footer button {
+  margin: 20px;
+}
+
+.close {
+  background-color: red;
+  color: white;
+  height: 30px;
+  width: 60px;
+  border: none;
+  border-radius: 10px;
+}
+
+.save {
+  background-color: green;
+  color: white;
+  height: 30px;
+  width: 60px;
+  border: none;
+  border-radius: 10px;
+}/*# sourceMappingURL=new-recipe.component.css.map */

@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ViewRecipesComponent } from './view-recipes/view-recipes.component';
 import { MyRecipeComponent } from './my-recipe/my-recipe.component';
+import { AllRecipesComponent } from './all-recipes/all-recipes.component';
 
 export const routes: Routes = [
     {path:'' ,component: LandingPageComponent},
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {path:'login', component: LoginComponent, pathMatch: 'full'},
     {path:'myprofile', component: MyProfileComponent, pathMatch: 'full'},
     {path:'myRecipes', component: MyRecipeComponent,pathMatch: 'full'},
+    {path:'allRecipes', component: AllRecipesComponent, pathMatch: 'full'},
     {path:'viewRecipes', component: ViewRecipesComponent, pathMatch: 'full'}
 ];

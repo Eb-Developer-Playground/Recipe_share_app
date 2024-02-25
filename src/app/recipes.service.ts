@@ -20,8 +20,8 @@ export class RecipesService {
   }
 //create Recipes in my recipes page  
 
-createRecipes(recipeData:any): Observable<any>{
-  console.log(recipeData);
-  return this.http.post<any>(this.apiUrl, recipeData);
+createRecipes(FormData:any): Observable<any>{
+  console.log(FormData);
+  return this.http.post<any>(this.apiUrl, FormData);
 }
 }
