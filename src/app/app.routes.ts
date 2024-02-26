@@ -17,7 +17,7 @@ export const routes: Routes = [
     {path:'myprofile', component: MyProfileComponent, pathMatch: 'full'},
     {path:'myRecipes', component: MyRecipeComponent,pathMatch: 'full'},
     {path:'allRecipes', component: AllRecipesComponent, pathMatch: 'full'},
-    {path:'viewRecipes', component: ViewRecipesComponent, pathMatch: 'full'},
+    {path:'viewRecipes/:id', component: ViewRecipesComponent, pathMatch: 'full'},
     {path:'newrecipe', component: AddRecipeComponent, pathMatch: 'full'},
     {path:'editrecipe/:id', component: EditRecipeComponent, pathMatch: 'full'}
     

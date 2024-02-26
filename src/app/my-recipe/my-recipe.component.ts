@@ -78,19 +78,20 @@ recipeData: any;
       console.log('Deleted recipe with ID:', recipeId);     
       this.openSnackBar('Recipe deleted successfully', 'success-notification');
       // Refresh recipe data after deleting 
-      setTimeout(() => {
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      setTimeout(() => {        
         this.router.navigate(['/myRecipes']);
-      })}, 1000);
+      }, 1000);
     },
     (error) => {
       // Error while deleting recipe
       console.error('Error deleting recipe:', error);
       this.openSnackBar('Error deleting recipe', 'error-notification');
     });
+    this.router.navigate(['/myRecipes']);
 }
   ViewRecipe(recipeId: any){
     console.log('viewed recipe with ID:', recipeId);
+    this.router.navigate(['/viewRecipes', recipeId]);
   }
   //logout function 
   Logout(){

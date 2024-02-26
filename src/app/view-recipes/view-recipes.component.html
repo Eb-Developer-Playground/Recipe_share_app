@@ -1,1 +1,36 @@
-<p>view-recipes works!</p>
+<div class="recipeContainer">
+    <!---details -->
+    <div class="recipedetails" *ngIf="recipe">
+        <h1>Title</h1>
+        <p> {{recipe.title}}</p>
+        <h2>Category </h2>
+        <p>{{recipe.category}}</p>
+        <h3>Ingredients </h3>
+        <ol>
+            <li>{{recipe.ingredients}}</li>
+        </ol>
+        <h3>Instructions</h3>
+        <ol>
+            <li>{{recipe.instruction}}</li>
+        </ol>
+        <h2>Review and Recommendation</h2>
+        <form>
+            
+            <mat-form-field>
+                <mat-label>Review and Recommendation</mat-label>
+                <input matInput type="text" formControlName="recommendation">
+            </mat-form-field>
+            <div class="footer">
+                <button class="cancel" mat-raised-button>Cancel</button>
+                <button class="submit" mat-raised-button>Submit </button>
+            </div>
+
+        </form>
+    </div>
+    <!--Image -->
+    <div class="recipeImage">
+        <img class="recimg" src={{recipe.recipimgurl}} alt="recipeImage">
+    </div>
+    <!--Review and recommendation sections --->
+ 
+</div>

@@ -95,6 +95,7 @@ Edit() {
       // Refresh recipe data after deleting 
       setTimeout(() => {
         window.location.reload();
+        this.router.navigate(['/myRecipes']);
       }, 1000);      
     },
     (error) => {
@@ -103,6 +104,7 @@ Edit() {
       this.openSnackBar('Error deleting recipe', 'error-notification');
     })    
   }
+  this.router.navigate(['/myRecipes']);
   }
   close() {
     this.router.navigate(['/myRecipes'])
