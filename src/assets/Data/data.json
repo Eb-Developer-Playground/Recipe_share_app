@@ -32,30 +32,6 @@
       "instruction": "Make and knead the pizza dough",
       "recipimgurl": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "id": "48d1"
-    },
-    {
-      "id": "0d90",
-      "title": "title",
-      "category": "category",
-      "ingredients": "ingredients",
-      "instruction": "heat",
-      "recipeUrl": "https://image"
-    },
-    {
-      "id": "d186",
-      "title": "title",
-      "category": "BreakFast-0",
-      "ingredients": "category",
-      "instruction": "heat",
-      "recipeUrl": "http://water"
-    },
-    {
-      "id": "c6a3",
-      "title": "title",
-      "category": "Lunch-1",
-      "ingredients": "category",
-      "instruction": "heat",
-      "recipeUrl": "http://water"
     }
   ]
 }

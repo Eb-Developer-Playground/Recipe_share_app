@@ -1,78 +1,81 @@
 <div>
     <header>
-        <div class="header">
-            <!--Logo-->
-            <div class="logo">
-                <img  src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png"  alt="logo">
-            </div>
-            <!--menu list-->
-            <div class="navigation"> 
-                <mat-toolbar   >
-                    <mat-toolbar-row class="fixed-header">  
-                    <div class="menunavs">
-                        <a mat-button [routerLink]="['/myprofile']" routerLinkActive="router-link-active" >MyProfile</a>
-                        <a mat-button [routerLink]="['/myRecipes']" routerLinkActive="router-link-active" >MyRecipes</a>
-                        <a mat-button [routerLink]="['/allRecipes']" routerLinkActive="router-link-active" >AllRecipes</a>
-                    </div>    
-                    <div class="authbuttons">
-                        <button mat-stroked-button type="button" class="loginbutton" (click)="Logout()" >Logout</button>                          
-                    </div>         
-    
-                    </mat-toolbar-row>
-                    </mat-toolbar>           
-            </div>
+      <div class="header">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo">
         </div>
-        </header>
-        <!--myrecipe section-->
-<div class="recipes">
-    <!--Upper section-->
-    <div class="recipecontrol">
+        <!-- Menu list -->
+        <div class="navigation"> 
+          <mat-toolbar>
+            <mat-toolbar-row class="fixed-header">
+              <div class="menunavs">
+                <a mat-button [routerLink]="['/myprofile']" routerLinkActive="router-link-active">MyProfile</a>
+                <a mat-button [routerLink]="['/myRecipes']" routerLinkActive="router-link-active">MyRecipes</a>
+                <a mat-button [routerLink]="['/allRecipes']" routerLinkActive="router-link-active">AllRecipes</a>
+              </div>
+              <div class="authbuttons">
+                <button mat-stroked-button type="button" class="loginbutton" (click)="Logout()">Logout</button>
+              </div>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </div>
+      </div>
+    </header>
+    <!-- My recipe section -->
+    <div class="recipes">
+      <!-- Upper section -->
+      <div class="recipecontrol">
         <button mat-stroked-button type="button" class="newrecipe" (click)="addRecipe()">New Recipe <span><mat-icon>create_new_folder</mat-icon></span></button>
         <form [formGroup]="search" (submit)="searchRecipes" class="searchform"> 
-            <mat-form-field floatLabel="auto" class="search">
-                <input matInput type="search" class="searchinput" placeholder=" Search..."
-                name="search" 
-                formControlName="search" 
-                autocomplete="off"  ><span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
-            </mat-form-field>
+          <mat-form-field  class="search">
+            <input matInput type="search" class="searchinput" placeholder=" Search..."
+              name="search" 
+              formControlName="search" 
+              autocomplete="off">
+            <span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
+          </mat-form-field>
         </form>
         <form [formGroup]="filter" class="filterform">
-            <mat-form-field floatLabel="auto" class="filtercontainer">           
-                <input matInput type="text"
-                        class="filter"
-                    placeholder="Filter By"
-                    name="filter"
-                    formControlName="filter"
-                    autocomplete="off">
-                    <mat-icon  class="dropicon">arrow_drop_down_circle</mat-icon>
-            </mat-form-field>
+          <mat-form-field  class="filtercontainer">           
+            <input matInput type="text"
+              class="filter"
+              placeholder="Filter By"
+              name="filter"
+              formControlName="filter"
+              autocomplete="off">
+            <mat-icon class="dropicon">arrow_drop_down_circle</mat-icon>
+          </mat-form-field>
         </form>
-    </div>
-  <!-- Recipes display section -->
-<div class="recipedisplay">
-    <div *ngFor="let recipe of recipeData" class="recipecard">
-        <mat-card class="recipeinfo">
+      </div>
+      <!-- Recipes display section -->
+      <div class="recipedisplay">
+        <div *ngFor="let recipe of recipeData" class="recipecard">
+          <mat-card class="recipeinfo" (click)="ViewRecipe(recipe.id)">
             <div class="recipeimagesect">
-                <div class="img">
-                    <img mat-card-image [src]="recipe.recipimgurl" class="recipeimage" alt="Recipe Image">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>Title: {{recipe.title}}</td>
-                                <td>Category: {{recipe.category}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="details">
-                    <mat-icon>star</mat-icon>
-                    <mat-icon>edit</mat-icon>
-                    <mat-icon>delete</mat-icon>
-                </div>
+              <div class="img">
+                <img mat-card-image [src]="recipe.recipimgurl" class="recipeimage" alt="Recipe Image">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Title: {{recipe.title}}</td>
+                      <td>Category: {{recipe.category}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="details">
+                <mat-icon (click)="like(recipe.id)">star</mat-icon>
+                <mat-icon (click)="edit(recipe.id)">edit</mat-icon>
+                <mat-icon (click)="deleteRe(recipe.id)">delete</mat-icon>
+              </div>
             </div>
             <div class="recipedetailsect">
-                <!-- You can add additional recipe details here if needed -->
+              <!-- You can add additional recipe details here if needed -->
             </div>
-        </mat-card>
+          </mat-card>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  

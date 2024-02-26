@@ -8,11 +8,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { RecipesService } from '../recipes.service';
 import { Router } from '@angular/router';
-import { NewRecipeComponent } from '../new-recipe/new-recipe.component';
-import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
-import { error } from 'console';
 import { AddRecipeComponent } from '../add-recipe/add-recipe.component';
 
 
@@ -27,8 +24,7 @@ export class MyRecipeComponent implements OnInit {
   search!: FormGroup;
   filter!: FormGroup;
 recipeData: any;
-  constructor(private formBuilder:FormBuilder, 
-    private dialog: MatDialog, 
+  constructor(private formBuilder:FormBuilder,
     private RecipesService: RecipesService, 
     private cdr: ChangeDetectorRef,
     private router: Router){}
@@ -44,8 +40,6 @@ recipeData: any;
       this.RecipesService.getData().subscribe((data: any) => {
         console.log(data);
         this.recipeData = data;
-        //trigger change detection to ensre that data re rendered without refreshing 
-        this.cdr.detectChanges();
       }, error=>{
         console.error('Error fetching data:', error); 
       });
@@ -56,6 +50,24 @@ recipeData: any;
     this.RecipesService.searchRecipes(searchTerm).subscribe((searchResult) => {
       console.log('Search Result:', searchResult);
     })
+  }
+  //like recipe
+  like(recipeId: any){
+    console.log('Liked recipe with ID:', recipeId);
+  }
+  edit(recipeId: any){
+    console.log('editted recipe with ID:', recipeId);
+  }
+  deleteRe(recipeId: any){
+    console.log('deleted recipe with ID:', recipeId);
+    this.RecipesService.deleteRecipe(recipeId).subscribe(() => {
+      console.log('Deleted recipe with ID:', recipeId);
+      // Refresh recipe data after deleting
+      this.recipeData();
+    });
+  }
+  ViewRecipe(recipeId: any){
+    console.log('viewed recipe with ID:', recipeId);
   }
   //logout function 
   Logout(){

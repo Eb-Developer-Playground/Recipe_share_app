@@ -145,8 +145,9 @@ mat-toolbar{
 //recipe rendering 
 .recipedisplay{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  margin: 10px 20px ;
+  margin: 15px 5% ;
 }
 .recipecard{
  height: 35vh;
