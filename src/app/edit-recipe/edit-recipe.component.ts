@@ -11,6 +11,7 @@ import { MatSelectModule} from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { Router,ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -31,14 +32,21 @@ export class EditRecipeComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, 
     private recipeservice: RecipesService,
     private route: ActivatedRoute,
+    private snackBar: MatSnackBar,
     private router:Router) { }
   //category optons 
 Categorys = [
-  {value: 'BreakFast-0', viewValue: 'BreakFast'},
-  {value: 'Lunch-1', viewValue: 'Lunch'},
-  {value: 'Dinner-2', viewValue: 'Dinner'},
-  {value: 'Snack-3', viewValue: 'Snack'}
+  {value: 'BreakFast', viewValue: 'BreakFast'},
+  {value: 'Lunch', viewValue: 'Lunch'},
+  {value: 'Dinner', viewValue: 'Dinner'},
+  {value: 'Snack', viewValue: 'Snack'}
 ];
+openSnackBar(message: string, panelClass: string): void {
+  this.snackBar.open(message, 'Close', {
+    duration: 1000, 
+    panelClass: [panelClass],
+  });
+}
 //form initialization 
   editrecipeForm!:FormGroup;
 ngOnInit(): void {
@@ -60,6 +68,7 @@ ngOnInit(): void {
 fetchRecipeData(recipeId: any) {
  //fetch recipe data from service based on recipeId
   this.recipeservice.getData(recipeId).subscribe(recipe => {
+    ///const recipeId= recipe.id;
     // Populate form fields with fetched data
     this.editrecipeForm.patchValue({
       title: recipe.title,
@@ -70,13 +79,32 @@ fetchRecipeData(recipeId: any) {
     });
   });
 }
-
-
   
 Edit() {
-  
+  if (this.editrecipeForm.valid){
+    const updatedrecipeData = {
+      title: this.editrecipeForm.value.title,
+      category: this.editrecipeForm.value.category,
+      ingredients: this.editrecipeForm.value.ingredients,
+      instruction: this.editrecipeForm.value.instruction,
+      recipimgurl: this.editrecipeForm.value.recipimgurl,
+    }
+    this.recipeservice.editRecipe(this.recipeId, updatedrecipeData).subscribe((res)=>{
+      console.log(res);
+      this.openSnackBar('Recipe Editted successfully', 'success-notification');
+      // Refresh recipe data after deleting 
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);      
+    },
+    (error) => {
+      // Error while deleting recipe
+      console.error('Error Editting recipe:', error);
+      this.openSnackBar('Error deleting recipe', 'error-notification');
+    })    
+  }
   }
   close() {
-  throw new Error('Method not implemented.');
+    this.router.navigate(['/myRecipes'])
   }
 }
