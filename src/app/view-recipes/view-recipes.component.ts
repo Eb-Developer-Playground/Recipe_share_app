@@ -17,7 +17,7 @@ export class ViewRecipesComponent implements OnInit{
   recipe: any;
 constructor(private route: ActivatedRoute,
   private recipeservice : RecipesService,
-  router: Router){}
+ private router: Router){}
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.recipeId = params['id'];
@@ -31,5 +31,8 @@ constructor(private route: ActivatedRoute,
       console.log(recipe)
       this.recipe = recipe;
     })
+  }
+  cancel(){
+    this.router.navigate(['/myRecipes'])
   }
 }

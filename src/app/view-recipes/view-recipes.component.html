@@ -13,16 +13,16 @@
         <ol>
             <li>{{recipe.instruction}}</li>
         </ol>
+         <!--Review and recommendation sections --->
         <h2>Review and Recommendation</h2>
-        <form>
-            
+        <form>            
             <mat-form-field>
                 <mat-label>Review and Recommendation</mat-label>
                 <input matInput type="text" formControlName="recommendation">
             </mat-form-field>
             <div class="footer">
-                <button class="cancel" mat-raised-button>Cancel</button>
-                <button class="submit" mat-raised-button>Submit </button>
+                <button class="cancel" (click)="cancel()" mat-raised-button>Cancel</button>
+                <button class="submit" type="submit" mat-raised-button>Submit </button>
             </div>
 
         </form>
@@ -30,7 +30,10 @@
     <!--Image -->
     <div class="recipeImage">
         <img class="recimg" src={{recipe.recipimgurl}} alt="recipeImage">
+        <div>
+
+        </div>
     </div>
-    <!--Review and recommendation sections --->
+   
  
 </div>
