@@ -63,11 +63,6 @@ recipeData: any;
   }
   //add new recipe by pop up page 
   addRecipe(){
-    const dialogRef = this.dialog.open(AddRecipeComponent, 
-   {
-     width: '550px', 
-       // Prevent closing by clicking outside or pressing ESC
-     disableClose: true
-    }); 
+    this.router.navigate(['/newrecipe'])
  }
 }

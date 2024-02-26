@@ -10,17 +10,17 @@ justify-content: center;
     display: flex;;
     align-items: center;
     justify-content: center;
-    width: 40%;
+    width: 30%;
     height: 70vh;
-    margin-top: au20pxto;
-
+    margin-top: 20vh;
+    box-shadow: 2px 3px 3px 2px $primary-color2;
   }
   form{
-    margin-left: 80px;
+    margin-left: 40px;
     margin-top: 20px;
   }
   mat-form-field{
-    width: 80%;
+    width: 90%;
     margin: auto;
   }
 
@@ -32,8 +32,7 @@ justify-content: center;
 .footer button{
     margin: 20px;
 }
-.close{
-    background-color: red;
+.close, .save{   
     color: $primary-color1;
     height: 30px;
     width: 60px;
@@ -41,10 +40,8 @@ justify-content: center;
     border-radius: 10px;
 }
 .save{
-    background-color: green;
-    color: $primary-color1;
-    height: 30px;
-    width: 60px;
-    border: none;
-    border-radius: 10px;
+    background-color: green;   
+}
+.close{
+    background-color: red;
 }
