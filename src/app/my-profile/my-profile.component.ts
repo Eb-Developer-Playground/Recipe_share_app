@@ -6,13 +6,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { PopuppageComponent } from '../popuppage/popuppage.component';
+import { NavigationComponent } from '../navigation/navigation.component';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../user.service';
 @Component({
   selector: 'app-my-profile',
   standalone: true,
-  imports: [CommonModule,RouterModule, MatMenuModule,MatToolbarModule, MatCardModule,MatIconModule],
+  imports: [CommonModule,NavigationComponent,RouterModule, MatMenuModule,MatToolbarModule, MatCardModule,MatIconModule],
   templateUrl: './my-profile.component.html',
   styleUrl: './my-profile.component.scss'
 })

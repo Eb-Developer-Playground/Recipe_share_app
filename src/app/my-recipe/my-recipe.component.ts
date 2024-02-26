@@ -11,12 +11,13 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 
 @Component({
   selector: 'app-my-recipe',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule,RouterModule,MatMenuModule,MatToolbarModule,MatCardModule,MatFormFieldModule,MatIconModule],
+  imports: [CommonModule,NavigationComponent, ReactiveFormsModule,RouterModule,MatMenuModule,MatToolbarModule,MatCardModule,MatFormFieldModule,MatIconModule],
   templateUrl: './my-recipe.component.html',
   styleUrl: './my-recipe.component.scss'
 })
@@ -93,10 +94,7 @@ recipeData: any;
     console.log('viewed recipe with ID:', recipeId);
     this.router.navigate(['/viewRecipes', recipeId]);
   }
-  //logout function 
-  Logout(){
-    this.router.navigate(['/LandingPage']);
-  }
+ 
   //add new recipe by pop up page 
   addRecipe(){
     this.router.navigate(['/newrecipe'])

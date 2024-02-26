@@ -2,78 +2,6 @@ $primary-color1: white;
 $primary-color2: maroon;
 $primary-color3: black;
 
-.header {
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-}
-
-.logo {
-  display: flex;
-  margin: 10px 20px 10px 20px;
-  height: 70px;
-  width: 80px;
-}
-
-mat-toolbar {
-  background-color: white;
-  font-size: large;
-}
-
-.navigation {
-  width: 70%;
-  margin-left: auto;
-  padding-right: 20px;
-}
-
-.fixed-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px auto;
-}
-
-.menunavs {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-}
-
-.menunavs a {
-  color: black;
-  margin-right: 80px;
-  cursor: pointer;
-  position: relative;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.menunavs a::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: maroon;
-  transition: width 0.3s ease;
-}
-
-.menunavs a:hover::before {
-  width: 100%;
-}
-
-.loginbutton {
-  margin-left: 20px;
-  width: 80px;
-  height: 40px;
-  border: none;
-  border-radius: 17px;
-  transition: background-color 0.3s ease;
-  background-color: maroon;
-  color: white;
-}
 
 //recipe section 
 //recipes sections
@@ -148,3 +76,74 @@ mat-toolbar {
  border-radius: 20px;
  box-shadow: 3px 3px 3px 3px $primary-color2;
 }
+.recipedisplay{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 15px 5% ;
+}
+.recipecard{
+ height: 40vh;
+ width: 20%;
+ margin: 10px;
+ border-radius: 20px;
+ box-shadow: 3px 3px 3px 3px $primary-color2;
+}
+.recipeinfo{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.recipeimagesect{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+.img{
+  width: 100%;
+  height: 70%;
+  border-radius: 20px;
+}
+.img h5{
+  position: absolute;
+  bottom: 20px;
+}
+.recipeimage{
+  width: 100%;
+  height: 100%;
+}
+.details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.success-notification {
+  background-color: #4caf50; 
+  position: fixed;
+  top: 0;  
+}
+
+.error-notification {
+  background-color: #f44336; 
+  position: fixed;
+  top: 0;  
+}
+.viewmore{
+  color: $primary-color1;
+  background-color: $primary-color2;
+  border: none;
+  display: flex;
+  margin-bottom: 25px;
+  height: 8px;
+  margin-left: 50px;
+  align-items: center;
+  justify-content: center;
+}
+

@@ -2,72 +2,7 @@ $primary-color1: white;
 $primary-color2: maroon;
 $primary-color3: black;
 
-.header {
-  background-color: $primary-color1;
-  display: flex;
-  flex-direction: row;
-}
 
-.logo {
-  display: flex;
-  margin: 10px 20px 10px 20px; 
-  height: 70px;
-  width: 80px;
-}
-mat-toolbar{
-    background-color: $primary-color1;
-    font-size: large;
-}
-.navigation{
-  width: 70%;
-  margin-left: auto;
-  padding-right: 20px;
-}
-.fixed-header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px auto;
-}
-.menunavs{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-}
-.menunavs a{
-  color: $primary-color3;
-  margin-right: 80px;
-  cursor: pointer;
-  position: relative;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.menunavs a::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: $primary-color2;
-  transition: width 0.3s ease;
-}
-///an underline that runs below the menu links on hover
-.menunavs a:hover::before {
-  width: 100%;
-}
-.loginbutton{
-  margin-left: 20px;
-  width: 80px;
-  height: 40px;
-  border: none;
-  border-radius: 17px;
-  transition: background-color 0.3s ease;
-  background-color: $primary-color2;
-  color: $primary-color1;
-}
 //my profile section 
 .myprofile{
     display: flex;
