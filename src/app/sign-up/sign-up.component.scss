@@ -21,20 +21,24 @@ mat-card {
     margin-top: 7%;
     color: $primary-color2;
     height: 75vh ;
-    width: 30%;
+    //width: 30%;    
    }
 
    .logo{
     display: flex;
     align-items: center;
-    margin: 5px auto auto auto;
-    height: 70px;
-    width: 80px;
+    margin: 5% auto; 
+    height: 8vh;
+    max-width: 70%; 
+}
+.logo img {
+    max-width: 80%; 
+    height: auto; 
 }
 
 mat-form-field {
     width: 90%;
-    height: 5%;
+    //height: 5%;
     margin-left: 5%;
 }
 
@@ -66,4 +70,51 @@ mat-form-field {
     text-decoration: underline;
     cursor: pointer;
     color: $primary-color2;
+}
+//responsiveness 
+
+@media only screen and (max-width: 768px) {
+    mat-card {
+        width: 75%; 
+        height: 85vh ;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    mat-card {
+        width: 50%; 
+    }
+}
+@media only screen and (min-width: 1024px) {
+    mat-card {
+        width: 30%; 
+    }
+}
+@media only screen and (max-width: 600px) {
+    mat-card {
+        width: 60%; 
+        height: 90vh ;
+    }
+}
+@media only screen and (max-width: 360px) {
+    mat-card {
+        width: 80%; 
+        height: 70vh ;
+    }
+}
+@media only screen and (max-width: 460px) {
+    mat-card {
+        width: 80%; 
+        height: 70vh ;
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        margin: 0 auto; 
+        height: 5vh;
+        max-width: 70%; 
+        top: 10px;
+    }
+    .logo img {
+        max-width: 80%; 
+    }
 }

@@ -68,23 +68,19 @@ mat-form-field {
 /* Media queries for responsiveness */
 @media only screen and (min-width: 1024px) {
     mat-card {
-        width: 30%; /* Adjusted width for smaller screens */
+        width: 30%; 
     }
 }
 @media only screen and (max-width: 1024px) {
     mat-card {
-        width: 50%; /* Adjusted width for smaller screens */
-    }
-}
-@media only screen and (max-width: 768px) {
-    mat-card {
-        width: 50%; /* Adjusted width for smaller screens */
+        width: 50%; 
     }
 }
 
+
 @media only screen and (max-width: 600px) {
     mat-card {
-        width: 60%; /* Adjusted width for even smaller screens */
+        width: 60%; 
     }
 }
 
