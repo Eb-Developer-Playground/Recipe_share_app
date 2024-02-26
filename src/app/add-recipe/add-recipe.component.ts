@@ -7,14 +7,26 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { RecipesService } from '../recipes.service';
 import { RecipesData } from '../sign-up/recipes';
+import { MatSelectModule} from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-recipe',
   standalone: true,
-  imports: [ReactiveFormsModule,MatInputModule,MatFormFieldModule, MatCardModule, MatButtonModule, MatIconModule],
+  imports: [ReactiveFormsModule,MatInputModule,
+    MatFormFieldModule, MatCardModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatOptionModule,
+    CommonModule,
+     MatIconModule],
   templateUrl: './add-recipe.component.html',
-  styleUrl: './add-recipe.component.sass'
+  styleUrl: './add-recipe.component.scss'
 })
 export class AddRecipeComponent {
+  constructor(private formBuilder: FormBuilder, private recipeservice: RecipesService, private router:Router) { }
+
   recipesinfo: RecipesData []=[];
   recipes: any={
       title: "",
@@ -23,7 +35,14 @@ export class AddRecipeComponent {
       instruction: "",
       recipeUrl: ""
 }
-  constructor(private formBuilder: FormBuilder, private recipeservice: RecipesService) { }
+//category optons 
+Categorys = [
+  {value: 'BreakFast-0', viewValue: 'BreakFast'},
+  {value: 'Lunch-1', viewValue: 'Lunch'},
+  {value: 'Dinner-2', viewValue: 'Dinner'},
+  {value: 'Snack-3', viewValue: 'Snack'}
+];
+ 
   //handle form control change
   recipeForm=new FormGroup({
     title : new FormControl('', Validators.required),
@@ -72,6 +91,7 @@ export class AddRecipeComponent {
                   instruction: response.instruction,
                   recipeUrl: response.recipeUrl
               })
+              this.router.navigate(['/myRecipes'])
             })
         }
     }else{
@@ -79,11 +99,8 @@ export class AddRecipeComponent {
     }
 
   }
+  close() {
+    this.router.navigate(['/myRecipes'])
+  }
 
-
-
-
-Close() {
-
-}
 }

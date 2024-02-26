@@ -1,0 +1,50 @@
+$primary-color1: white;
+$primary-color2: maroon;
+$primary-color3: black;
+
+.newrecipecontainer{
+display: flex;  
+justify-content: center;
+}
+.newrecipecard {
+    display: flex;;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 70vh;
+    margin-top: au20pxto;
+
+  }
+  form{
+    margin-left: 80px;
+    margin-top: 20px;
+  }
+  mat-form-field{
+    width: 80%;
+    margin: auto;
+  }
+
+.footer{
+    display: flex;
+    justify-content: center;
+   align-items: stretch;
+}
+.footer button{
+    margin: 20px;
+}
+.close{
+    background-color: red;
+    color: $primary-color1;
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 10px;
+}
+.save{
+    background-color: green;
+    color: $primary-color1;
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 10px;
+}
