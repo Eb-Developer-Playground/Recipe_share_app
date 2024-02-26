@@ -192,4 +192,19 @@ mat-toolbar{
 }
 .details mat-icon {
   margin: 5px 30px;
+  color: $primary-color2;
 }
+
+
+.success-notification {
+  background-color: #4caf50; 
+  position: fixed;
+  top: 0;  
+}
+
+.error-notification {
+  background-color: #f44336; 
+  position: fixed;
+  top: 0;  
+}
+

@@ -10,7 +10,7 @@ import { RecipesService } from '../recipes.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
-import { AddRecipeComponent } from '../add-recipe/add-recipe.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -21,16 +21,28 @@ import { AddRecipeComponent } from '../add-recipe/add-recipe.component';
   styleUrl: './my-recipe.component.scss'
 })
 export class MyRecipeComponent implements OnInit {
+ 
   search!: FormGroup;
   filter!: FormGroup;
 recipeData: any;
   constructor(private formBuilder:FormBuilder,
     private RecipesService: RecipesService, 
     private cdr: ChangeDetectorRef,
+    private snackBar: MatSnackBar,
     private router: Router){}
+
+    openSnackBar(message: string, panelClass: string): void {
+      this.snackBar.open(message, 'Close', {
+        duration: 1000, 
+        panelClass: [panelClass],
+      });
+    }
+    
   //fetch My recipes from the server when user visit the page 
   //fetch data from the server 
+
   ngOnInit(): void {
+    
     this.search = this.formBuilder.group({
       search: ['']
     })
@@ -40,6 +52,7 @@ recipeData: any;
       this.RecipesService.getData().subscribe((data: any) => {
         console.log(data);
         this.recipeData = data;
+        this.cdr.detectChanges();
       }, error=>{
         console.error('Error fetching data:', error); 
       });
@@ -57,15 +70,25 @@ recipeData: any;
   }
   edit(recipeId: any){
     console.log('editted recipe with ID:', recipeId);
+    this.router.navigate(['/editrecipe', recipeId]);
   }
   deleteRe(recipeId: any){
     console.log('deleted recipe with ID:', recipeId);
     this.RecipesService.deleteRecipe(recipeId).subscribe(() => {
-      console.log('Deleted recipe with ID:', recipeId);
-      // Refresh recipe data after deleting
-      this.recipeData();
+      console.log('Deleted recipe with ID:', recipeId);     
+      this.openSnackBar('Recipe deleted successfully', 'success-notification');
+      // Refresh recipe data after deleting 
+      setTimeout(() => {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/myRecipes']);
+      })}, 1000);
+    },
+    (error) => {
+      // Error while deleting recipe
+      console.error('Error deleting recipe:', error);
+      this.openSnackBar('Error deleting recipe', 'error-notification');
     });
-  }
+}
   ViewRecipe(recipeId: any){
     console.log('viewed recipe with ID:', recipeId);
   }
