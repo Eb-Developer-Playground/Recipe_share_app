@@ -1,49 +1,52 @@
 <div>
-    <app-navigation></app-navigation>
-        <div class="recipes">
-            <!--Upper section-->
-            <div class="recipecontrol">                
-                <form [formGroup]="search" class="searchform"> 
-                    <mat-form-field floatLabel="auto" class="search">
-                        <input matInput type="search" class="searchinput" placeholder=" Search..."
-                        name="search" 
-                        formControlName="search" 
-                        autocomplete="off"  ><span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
-                    </mat-form-field>
-                </form>
-                <form [formGroup]="filter" class="filterform">
-                    <mat-form-field floatLabel="auto" class="filtercontainer">           
-                        <input  type="text"
-                                class="filter"
-                            placeholder="Filter By"
-                            name="filter"
-                            formControlName="filter"
-                            autocomplete="off">
-                            <mat-icon  class="dropicon">arrow_drop_down_circle</mat-icon>
-                    </mat-form-field>
-                </form>
+  <app-navigation></app-navigation>
+  <div class="recipes">
+    <!-- Upper section -->
+    <div class="recipecontrol">                
+      <form [formGroup]="search" class="searchform"> 
+        <mat-form-field floatLabel="auto" class="search">
+          <input matInput type="search" class="searchinput" placeholder=" Search..."
+            name="search" 
+            formControlName="search" 
+            autocomplete="off">
+          <span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
+        </mat-form-field>
+      </form>
+      <form [formGroup]="filter" class="filterform">
+        <mat-form-field floatLabel="auto" class="filtercontainer">           
+          <input  type="text"
+                  class="filter"
+                  placeholder="Filter By"
+                  name="filter"
+                  formControlName="filter"
+                  autocomplete="off">
+          <mat-icon  class="dropicon">arrow_drop_down_circle</mat-icon>
+        </mat-form-field>
+      </form>
+    </div>
+
+    <!-- Recipes display section -->
+    <div class="recipedisplay">
+      <div *ngFor="let recipe of recipeData" class="recipecard">
+        <mat-card class="recipeinfo" (click)="ViewRecipe(recipe.id)">
+          <div class="recipeimagesect">
+            <div class="img">
+              <img mat-card-image [src]="recipe.recipeUrl" class="recipeimage" alt="Recipe Image">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Title: {{recipe.title}}</td>
+                    <td>Category: {{recipe.category}}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="recipedisplay">
-                <div *ngFor="let recipe of recipeData" class="recipecard">
-                  <mat-card class="recipeinfo" (click)="ViewRecipe(recipe.id)">
-                    <div class="recipeimagesect">
-                      <div class="img">
-                        <img mat-card-image [src]="recipe.recipeUrl" class="recipeimage" alt="Recipe Image">
-                        <table>
-                          <tbody>
-                            <tr>
-                              <td>Title: {{recipe.title}}</td>
-                              <td>Category: {{recipe.category}}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <div class="recipedetailsect">
-                      <!-- You can add additional recipe details here if needed -->
-                    </div>
-                  </mat-card>
-                </div>
-              </div>
-</div>
+          </div>
+          <div class="recipedetailsect">
+            <!-- You can add additional recipe details here if needed -->
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>

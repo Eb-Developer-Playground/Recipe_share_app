@@ -74,6 +74,12 @@ $primary-color3: black;
     color: $primary-color1;
   }
   @media only screen and (max-width: 600px) {
+    .navigation{
+      width: 80%;
+      padding-right: 20px;
+      margin-right: 40px;
+    }
+
     .logo {
       display: flex;
       margin: 10px 5px 10px 20px; 
@@ -89,7 +95,7 @@ $primary-color3: black;
     }
     .menunavs a{
       color: $primary-color3;
-      margin-right: 30px;
+      margin-right: 10px;
       font-weight: 500;
     }
     .loginbutton{

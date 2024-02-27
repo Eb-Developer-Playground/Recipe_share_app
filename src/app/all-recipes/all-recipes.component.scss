@@ -9,8 +9,9 @@ $primary-color3: black;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: fit-content;
+  height: 100vh;
   margin-top: 100px;
+
 }
 .recipecontrol {
   height: 7vh;
@@ -81,6 +82,8 @@ $primary-color3: black;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   margin: 15px 5% ;
 }
 .recipecard{
@@ -147,4 +150,46 @@ $primary-color3: black;
   align-items: center;
   justify-content: center;
 }
+@media only screen and (max-width: 600px) {
+  .recipecard{
+    height: 30vh;
+    width: 30%;
+    margin: 20px;
+   }
+   .details mat-icon {
+    margin: 5px 25px;
+    color: $primary-color2;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .recipecard{
+    height: 30vh;
+    width: 50% ;
 
+   }
+   .details mat-icon {
+    margin: 5px 20px;
+    color: $primary-color2 ;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .recipecard {
+    height: 45vh;
+    width: 35%;
+   }
+   .details mat-icon {
+    margin: 5px 20px ;
+    color: $primary-color2 ;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .recipecard{
+    height: 50vh;
+    width: 30%;
+   }
+   .details mat-icon {
+    margin: 5px 20px;
+    color: $primary-color2 ;
+  }
+}
