@@ -12,12 +12,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationComponent } from '../navigation/navigation.component';
+import { MatSelectModule} from '@angular/material/select';
 
 
 @Component({
   selector: 'app-my-recipe',
   standalone: true,
-  imports: [CommonModule,NavigationComponent, ReactiveFormsModule,RouterModule,MatMenuModule,MatToolbarModule,MatCardModule,MatFormFieldModule,MatIconModule],
+  imports: [CommonModule,MatSelectModule,
+    NavigationComponent, ReactiveFormsModule,
+    RouterModule,MatMenuModule,MatToolbarModule,
+    MatCardModule,MatFormFieldModule,MatIconModule],
   templateUrl: './my-recipe.component.html',
   styleUrl: './my-recipe.component.scss'
 })
@@ -26,6 +30,15 @@ export class MyRecipeComponent implements OnInit {
   search!: FormGroup;
   filter!: FormGroup;
 recipeData: any;
+filteredRecipes: any;
+//category optons 
+Categorys = [
+  {value: 'BreakFast', viewValue: 'BreakFast'},
+  {value: 'Lunch', viewValue: 'Lunch'},
+  {value: 'Dinner', viewValue: 'Dinner'},
+  {value: 'Snack', viewValue: 'Snack'}
+];
+ 
   constructor(private formBuilder:FormBuilder,
     private RecipesService: RecipesService, 
     private cdr: ChangeDetectorRef,
@@ -53,6 +66,7 @@ recipeData: any;
       this.RecipesService.getData().subscribe((data: any) => {
         console.log(data);
         this.recipeData = data;
+        this.filteredRecipes = data;
         this.cdr.detectChanges();
       }, error=>{
         console.error('Error fetching data:', error); 
@@ -64,6 +78,15 @@ recipeData: any;
     this.RecipesService.searchRecipes(searchTerm).subscribe((searchResult) => {
       console.log('Search Result:', searchResult);
     })
+  }
+  //sort function 
+  filterRecipesByCategory(): void {
+    const selectedCategory = this.filter.value.filter;
+    if (selectedCategory) {
+      this.filteredRecipes = this.recipeData.filter((recipe: { category: any; }) => recipe.category === selectedCategory);
+    } else {
+      this.filteredRecipes = this.recipeData;
+    }
   }
   //like recipe
   like(recipeId: any){

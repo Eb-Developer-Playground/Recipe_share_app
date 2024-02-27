@@ -37,10 +37,10 @@ export class AddRecipeComponent {
 }
 //category optons 
 Categorys = [
-  {value: 'BreakFast-0', viewValue: 'BreakFast'},
-  {value: 'Lunch-1', viewValue: 'Lunch'},
-  {value: 'Dinner-2', viewValue: 'Dinner'},
-  {value: 'Snack-3', viewValue: 'Snack'}
+  {value: 'BreakFast', viewValue: 'BreakFast'},
+  {value: 'Lunch', viewValue: 'Lunch'},
+  {value: 'Dinner', viewValue: 'Dinner'},
+  {value: 'Snack', viewValue: 'Snack'}
 ];
  
   //handle form control change

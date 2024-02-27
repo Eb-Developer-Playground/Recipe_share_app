@@ -10,28 +10,19 @@
   ],
   "recipes": [
     {
-      "title": "Pizza",
-      "category": "Snacks",
-      "ingredients": "1 package (2 1/4 teaspoons) active dry yeast",
-      "instruction": "Make and knead the pizza dough",
-      "recipimgurl": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "id": "6a7d"
-    },
-    {
-      "title": "Teriyaki Chickens",
-      "category": "Snack",
-      "ingredients": "1 tablespoon grated fresh ginger (from one 5-inch piece)",
-      "instruction": "Marinate the chicken:",
-      "recipimgurl": "https://www.simplyrecipes.com/thmb/FiA0G0VxuEwyaXPSFfUzbUEu-tI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Teriyaki-Chicken-Noodle-Soup-METHOD-2-647e06e241994c56b1dcd15d76d3f9da.jpg",
-      "id": "4345"
-    },
-    {
-      "title": "Pizza",
+      "title": "Chicken",
       "category": "Lunch",
-      "ingredients": "1 package (2 1/4 teaspoons) active dry yeast",
-      "instruction": "Make and knead the pizza dough",
-      "recipimgurl": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "id": "48d1"
+      "ingredients": "6 (12 inch) flour tortillas",
+      "instruction": "Preheat the oven to 350 degrees F (175 degrees C). Lightly grease a large baking dish.",
+      "recipimgurl": "https://images.unsplash.com/photo-1606728035253-49e8a23146de?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "ae15"
+    },
+    {
+      "title": "pillau",
+      "category": "Dinner",
+      "ingredients": "rice",
+      "instruction": "Preheat the oven to 350 degrees F (175 degrees C). Lightly grease a large baking dish.",
+      "id": "4386"
     }
   ]
 }

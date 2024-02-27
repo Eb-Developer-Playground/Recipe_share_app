@@ -15,19 +15,17 @@
           </mat-form-field>
         </form>
         <form [formGroup]="filter" class="filterform">
-          <mat-form-field  class="filtercontainer">           
-            <input matInput type="text"
-              class="filter"
-              placeholder="Filter By"
-              name="filter"
-              formControlName="filter"
-              autocomplete="off">
-            <mat-icon class="dropicon">arrow_drop_down_circle</mat-icon>
-          </mat-form-field>
+          <mat-form-field>
+            <mat-select class="filter" placeholder="Sort By" formControlName="filter" (selectionChange)="filterRecipesByCategory()">
+                <mat-option *ngFor="let category of Categorys" [value]="category.value">
+                    {{ category.viewValue }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
         </form>
       </div>
       <!-- Recipes display section -->
-      <div class="recipedisplay">
+      <div class="recipedisplay" >
         <div *ngFor="let recipe of recipeData" class="recipecard">
           <mat-card class="recipeinfo" (click)="ViewRecipe(recipe.id)">
             <div class="recipeimagesect">
