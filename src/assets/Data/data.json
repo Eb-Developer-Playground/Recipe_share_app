@@ -1,11 +1,15 @@
 {
   "user": [
     {
-      "id": "bbe3",
       "username": "denis",
       "email": "denisdelaki@gmail.com",
-      "password": "0000",
-      "passwordconfirm": "0000"
+      "profile": {
+        "telephone": "0703103852",
+        "restaurant": "bond",
+        "address": "33",
+        "facebook": "denis"
+      },
+      "id": "bbe3"
     }
   ],
   "recipes": [
@@ -16,13 +20,6 @@
       "instruction": "Preheat the oven to 350 degrees F (175 degrees C). Lightly grease a large baking dish.",
       "recipimgurl": "https://images.unsplash.com/photo-1606728035253-49e8a23146de?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "id": "ae15"
-    },
-    {
-      "title": "pillau",
-      "category": "Dinner",
-      "ingredients": "rice",
-      "instruction": "Preheat the oven to 350 degrees F (175 degrees C). Lightly grease a large baking dish.",
-      "id": "4386"
     }
   ]
 }

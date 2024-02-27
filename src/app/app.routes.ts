@@ -12,13 +12,13 @@ import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 export const routes: Routes = [
     {path:'' ,component: LandingPageComponent},
     {path:'LandingPage', component: LandingPageComponent, pathMatch: 'full'},
-    {path:'signup', component: SignUpComponent, pathMatch: 'full'}, 
-    {path:'login', component: LoginComponent, pathMatch: 'full'},
-    {path:'myprofile', component: MyProfileComponent, pathMatch: 'full'},
-    {path:'myRecipes', component: MyRecipeComponent,pathMatch: 'full'},
-    {path:'allRecipes', component: AllRecipesComponent, pathMatch: 'full'},
-    {path:'viewRecipes/:id', component: ViewRecipesComponent, pathMatch: 'full'},
-    {path:'newrecipe', component: AddRecipeComponent, pathMatch: 'full'},
-    {path:'editrecipe/:id', component: EditRecipeComponent, pathMatch: 'full'}
+    {path:'signup', component: SignUpComponent}, 
+    {path:'login', component: LoginComponent},
+    {path:'myprofile', component: MyProfileComponent},
+    {path:'myRecipes', component: MyRecipeComponent},
+    {path:'allRecipes', component: AllRecipesComponent},
+    {path:'viewRecipes/:id', component: ViewRecipesComponent},
+    {path:'newrecipe', component: AddRecipeComponent},
+    {path:'editrecipe/:id', component: EditRecipeComponent}
     
 ];
