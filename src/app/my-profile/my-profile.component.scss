@@ -6,7 +6,7 @@ $primary-color3: black;
 //my profile section 
 .myprofile{
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
 }
 //side div 
 .sidediv{
@@ -78,4 +78,71 @@ $primary-color3: black;
 }
 .popupcard{
     height: 10vh;
+}
+@media only screen and (max-width: 600px) {
+    //side div 
+    .sidediv{
+        width: 60%;
+        height: 60vh;
+        align-items: center;        
+    }
+    .sidediv img{
+        height: 150px;
+        width: 150px;
+    }
+    .summarydiv{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .summary{
+        margin: 15px ; 
+        height: 90%;
+        width: 90%;
+        padding-bottom: 20px;
+        border-radius: 17px;
+        box-shadow: 3px 3px 3px 3px $primary-color2;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    //side div 
+    .sidediv{
+        width: 50%;
+        height: 70vh;
+        align-items: center;        
+    }
+    .sidediv img {
+        height: 180px;
+        width: 180px;
+    }
+    .summarydiv {
+        width: 60% ;
+        display: flex ;
+        flex-direction: column ;
+        margin-top: 20px ;
+        margin-right: 20px;
+    }
+    .summary {
+        margin: 15px; 
+        height: 90% ;
+        width: 90% ;
+        padding-bottom: 20px;
+        border-radius: 17px;
+        box-shadow: 3px 3px 3px 3px $primary-color2;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    //side div 
+    .sidediv{
+        width: 60%;
+        height: 80vh;
+        align-items: center;        
+    }
+    .sidediv img {
+        height: 200px;
+        width: 200px;
+    }   
 }

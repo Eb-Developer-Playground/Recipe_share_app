@@ -66,6 +66,7 @@ Categorys = [
       this.RecipesService.getData().subscribe((data: any) => {
         console.log(data);
         this.recipeData = data;
+        console.log(this.recipeData)
         this.filteredRecipes = data;
         this.cdr.detectChanges();
       }, error=>{

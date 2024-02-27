@@ -28,7 +28,7 @@
                   <mat-card class="recipeinfo" (click)="ViewRecipe(recipe.id)">
                     <div class="recipeimagesect">
                       <div class="img">
-                        <img mat-card-image src={{recipe.recipimgurl}} class="recipeimage" alt="Recipe Image">
+                        <img mat-card-image [src]="recipe.recipeUrl" class="recipeimage" alt="Recipe Image">
                         <table>
                           <tbody>
                             <tr>
