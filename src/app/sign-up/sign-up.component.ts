@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { UserService } from '../user.service';
 import { UserData } from './users';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-sign-up',
   standalone: true,
@@ -58,7 +59,16 @@ user:any ={
   });
 //loading page 
   loading = false;
-  constructor(private _formBuilder: FormBuilder, private userService: UserService, private router: Router) {}
+  constructor(private _formBuilder: FormBuilder, 
+    private snackBar: MatSnackBar,
+    private userService: UserService, private router: Router) {}
+    //error messages 
+    openSnackBar(message: string, panelClass: string): void {
+      this.snackBar.open(message, 'Close', {
+        duration: 2000, 
+        panelClass: [panelClass],
+      });
+    }
   // Get the labels on focus of the input field
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';
@@ -83,7 +93,6 @@ user:any ={
       if (password !== null && confirmPassword !== null) {
         return password === confirmPassword ? null : { mismatch: true };
   }
-
   // If either control is null, consider them not matching
   return { mismatch: true };
   }
@@ -135,12 +144,14 @@ user:any ={
               password: res.password, 
               passwordconfirm: res.passwordconfirm})
               this.loading = true;
+              this.openSnackBar('Signedup in successfully, Welcome', 'success-notification');
               this.router.navigate(['/login'])
         })
         
       }
   else{
     console.log("not valid")
+    this.openSnackBar('Signup unsuccessful', 'error-notification');
   }
 
   }

@@ -17,6 +17,20 @@
       "email": "joshua@emtechouse.co.ke",
       "password": "0000",
       "passwordconfirm": "0000"
+    },
+    {
+      "id": "31ac",
+      "username": "denisdelaki",
+      "email": "denisdelaki@gmail.com",
+      "password": "9999",
+      "passwordconfirm": "9999"
+    },
+    {
+      "id": "6d95",
+      "username": "denis",
+      "email": "denisdelaki@gmail.com",
+      "password": "9999",
+      "passwordconfirm": "9999"
     }
   ],
   "recipes": [
@@ -91,6 +105,29 @@
       "ingredients": "meat, spinach, tommatoes ",
       "instruction": "cook the spinach separately, fry the meat, serve with ugali",
       "recipeUrl": "https://images.unsplash.com/photo-1504973960431-1c467e159aa4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "9fe7",
+      "title": "masala",
+      "category": "Lunch",
+      "ingredients": "masala",
+      "instruction": "cook masala",
+      "recipeUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "8fab"
+    }
+  ],
+  "testimonials": [
+    {
+      "image": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16",
+      "review": "I have a lot of food allergies and I love this app!",
+      "name": "Amir",
+      "id": "d7a7"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16",
+      "review": "I think we've been using Equity eateri for a while now and it's an awesome app.It's very easy to use and you can save recipes in it. I think the best thing about this app is that it has alot of categories,so you are ablee to find the perfect recipe for any occassion.",
+      "name": "Denis",
+      "id": "e972"
     }
   ]
 }

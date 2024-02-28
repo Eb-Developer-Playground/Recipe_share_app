@@ -10,6 +10,16 @@ export class RecipesService {
   
   constructor(private http: HttpClient) {}
   ///get recipes from the server 
+  //get logged in userId data 
+  getmyData( userId: string,recipeId?: string): Observable<any> {
+    if (recipeId) {
+      // Fetch single recipe during view recipe
+      return this.http.get<any>(`${this.apiUrl}${recipeId}?userId=${userId}`);
+    } else {
+      // Fetch all recipes
+      return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
+    }
+  }
   getData(recipeId?: string): Observable<any> {
     if (recipeId) {
       // Fetch single recipe during view recipe

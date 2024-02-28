@@ -1,11 +1,13 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit, ViewChild,Renderer2, ElementRef, OnDestroy  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { Subscription, interval } from 'rxjs';
 import { RecommendedRecipeComponent } from '../recommended-recipe/recommended-recipe.component';
+import { TestimonialsService } from '../testimonials.service';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
@@ -14,14 +16,17 @@ import { RecommendedRecipeComponent } from '../recommended-recipe/recommended-re
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent  {
-
- constructor (private router :Router){}
+  testimonies: any[] = [];
+  currentSlide = 0;
+  private sliderSubscription: Subscription | undefined;
+  constructor(private router: Router, private testimonials: TestimonialsService) {}
+  
  
-SignUp() {
-  this.router.navigate(['/signup']);
-}
-Login() {
-  this.router.navigate(['/login']);
-}
+  SignUp(): void {
+    this.router.navigate(['/signup']);
+  }
 
+  Login(): void {
+    this.router.navigate(['/login']);
+  }
 }

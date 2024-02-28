@@ -74,12 +74,15 @@ Categorys = [
           const category=getCategory.value;
           const instruction=getInstruction.value;
           const recipeUrl=getRecipeUrl.value;
+          const userId = localStorage.getItem('loggedInUserId');
+          console.log(userId)
           const formData = {
             title: title,
             category: category,
             ingredients: ingredients,
             instruction: instruction,
-            recipeUrl: recipeUrl
+            recipeUrl: recipeUrl,
+            userId: userId
           }
           console.log("formdata", formData)
           //push data to the server 

@@ -64,7 +64,17 @@ mat-form-field {
     cursor: pointer;
     color: $primary-color2;
 }
-
+.success-notification {
+    background-color: #4caf50; 
+    position: fixed;
+    top: 0;  
+  }
+  
+  .error-notification {
+    background-color: #f44336; 
+    position: fixed;
+    top: 0;  
+  }
 /* Media queries for responsiveness */
 @media only screen and (min-width: 1024px) {
     mat-card {

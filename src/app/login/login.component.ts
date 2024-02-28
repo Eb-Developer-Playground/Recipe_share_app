@@ -8,7 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { Router } from '@angular/router';
-import { get } from 'http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -41,13 +41,20 @@ export class LoginComponent {
   });
   loading= false;
 
-  constructor(private _formBuilder: FormBuilder,private router: Router, private userService: UserService,) {
+  constructor(private _formBuilder: FormBuilder,private router: Router,
+     private userService: UserService,
+     private snackBar: MatSnackBar,) {
     this.options = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
-  
+  openSnackBar(message: string, panelClass: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 1000, 
+      panelClass: [panelClass],
+    });
+  }
   // Get the labels on focus of the input field
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';
@@ -87,11 +94,12 @@ export class LoginComponent {
             console.log(loggedInUserId)            
             this.loading = true;
             setTimeout(() => {
+              this.openSnackBar('Logged in successfully', 'success-notification');
               this.router.navigate(['/myprofile']);
               this.loading = false;
             }, 1000);
           } else {
-            alert('Invalid credentials');
+            this.openSnackBar('Invalid Credentials', 'error-notification');
           }
           });
        }

@@ -43,7 +43,7 @@ Categorys = [
   constructor(private formBuilder:FormBuilder,
     private RecipesService: RecipesService, 
     private cdr: ChangeDetectorRef,
-    private snackBar: MatSnackBar,
+    private snackBar: MatSnackBar, 
     private router: Router){}
 
     openSnackBar(message: string, panelClass: string): void {
@@ -55,7 +55,7 @@ Categorys = [
     
   //fetch My recipes from the server when user visit the page 
   //fetch data from the server 
-
+  
   ngOnInit(): void {
     
     this.search = this.formBuilder.group({
@@ -64,7 +64,9 @@ Categorys = [
     this.filter = this.formBuilder.group({
       filter: ['']
     })
-      this.RecipesService.getData().subscribe((data: any) => {
+    const userId = localStorage.getItem('loggedInUserId')?? '';
+    console.log(userId)
+      this.RecipesService.getmyData(userId).subscribe((data: any) => {
         console.log(data);
         this.recipeData = data;
         console.log(this.recipeData)

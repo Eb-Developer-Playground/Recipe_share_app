@@ -9,6 +9,9 @@
       </div>
       <!-- Recipes display section -->
       <div class="recipedisplay" >
+        <div *ngIf="recipeData.length === 0" class="no-recipes-message">
+          No recipes yet. Kindly create one!
+        </div>
         <div *ngFor="let recipe of recipeData" class="recipecard">
           <mat-card class="recipeinfo" (click)="ViewRecipe(recipe.id)">
             <div class="recipeimagesect">

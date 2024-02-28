@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { NavigationComponent } from '../navigation/navigation.component';
 @Component({
   selector: 'app-view-recipes',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [CommonModule, NavigationComponent, MatFormFieldModule, MatInputModule, MatButtonModule],
   templateUrl: './view-recipes.component.html',
   styleUrl: './view-recipes.component.scss'
 })
