@@ -10,11 +10,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { RecipesService } from '../recipes.service';
+import { SearchFilterComponent } from '../search-filter/search-filter.component';
 
 @Component({
   selector: 'app-all-recipes',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule, NavigationComponent, MatIconModule, MatCardModule,MatToolbarModule, MatMenuModule,MatInputModule, RouterModule],
+  imports: [SearchFilterComponent, ReactiveFormsModule,CommonModule, NavigationComponent, MatIconModule, MatCardModule,MatToolbarModule, MatMenuModule,MatInputModule, RouterModule],
   templateUrl: './all-recipes.component.html',
   styleUrl: './all-recipes.component.scss'
 })

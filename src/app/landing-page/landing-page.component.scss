@@ -635,12 +635,12 @@ mat-toolbar{
 }
 .chefimage{
   position: absolute;
-  top: 8px;
+  top: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  width: 250px;
+  height: 160px;
+  width: 210px;
 }
 .chefimage img{
   height: 100%;
@@ -649,10 +649,13 @@ mat-toolbar{
   border-radius: 100px;
 }
 .chefreview{
-margin-top:40% ;
+margin-top:34% ;
 }
 .chefreview p{
-  padding: 10px;
+  position: relative;
+  font-size: 15px;
+  bottom: 5px;
+  padding: 8px;
   font-size: 18px;
 }
 .aboutdetails2, .aboutdetails{

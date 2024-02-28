@@ -3,26 +3,7 @@
   <div class="recipes">
     <!-- Upper section -->
     <div class="recipecontrol">                
-      <form [formGroup]="search" class="searchform"> 
-        <mat-form-field floatLabel="auto" class="search">
-          <input matInput type="search" class="searchinput" placeholder=" Search..."
-            name="search" 
-            formControlName="search" 
-            autocomplete="off">
-          <span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
-        </mat-form-field>
-      </form>
-      <form [formGroup]="filter" class="filterform">
-        <mat-form-field floatLabel="auto" class="filtercontainer">           
-          <input  type="text"
-                  class="filter"
-                  placeholder="Filter By"
-                  name="filter"
-                  formControlName="filter"
-                  autocomplete="off">
-          <mat-icon  class="dropicon">arrow_drop_down_circle</mat-icon>
-        </mat-form-field>
-      </form>
+      <app-search-filter></app-search-filter>
     </div>
 
     <!-- Recipes display section -->

@@ -11,10 +11,12 @@ import { MatSelectModule} from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { NavigationComponent } from '../navigation/navigation.component';
 @Component({
   selector: 'app-add-recipe',
   standalone: true,
-  imports: [ReactiveFormsModule,MatInputModule,
+  imports: [
+    NavigationComponent,ReactiveFormsModule,MatInputModule,
     MatFormFieldModule, MatCardModule,
     MatButtonModule,
     MatSelectModule,
