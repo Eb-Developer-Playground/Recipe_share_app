@@ -13,7 +13,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { MatSelectModule} from '@angular/material/select';
-
+import { SearchFilterComponent } from '../search-filter/search-filter.component';
 
 @Component({
   selector: 'app-my-recipe',
@@ -21,7 +21,8 @@ import { MatSelectModule} from '@angular/material/select';
   imports: [CommonModule,MatSelectModule,
     NavigationComponent, ReactiveFormsModule,
     RouterModule,MatMenuModule,MatToolbarModule,
-    MatCardModule,MatFormFieldModule,MatIconModule],
+    MatCardModule,MatFormFieldModule,
+    SearchFilterComponent, MatIconModule],
   templateUrl: './my-recipe.component.html',
   styleUrl: './my-recipe.component.scss'
 })
@@ -73,13 +74,7 @@ Categorys = [
         console.error('Error fetching data:', error); 
       });
   }
-  //search function 
-  searchRecipes() {
-    const searchTerm = this.search.value.search;
-    this.RecipesService.searchRecipes(searchTerm).subscribe((searchResult) => {
-      console.log('Search Result:', searchResult);
-    })
-  }
+  
   //sort function 
   filterRecipesByCategory(): void {
     const selectedCategory = this.filter.value.filter;

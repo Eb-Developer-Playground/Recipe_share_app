@@ -10,6 +10,13 @@
         "facebook": "denis"
       },
       "id": "bbe3"
+    },
+    {
+      "id": "8fab",
+      "username": "joshua",
+      "email": "joshua@emtechouse.co.ke",
+      "password": "0000",
+      "passwordconfirm": "0000"
     }
   ],
   "recipes": [

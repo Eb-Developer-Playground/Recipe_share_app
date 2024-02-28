@@ -31,6 +31,7 @@ justify-content: center;
 }
 .footer button{
     margin: 20px;
+    color: white;
 }
 .close, .save{   
     color: $primary-color1;
@@ -41,6 +42,7 @@ justify-content: center;
 }
 .save{
     background-color: green;   
+    color: white;
 }
 .close{
     background-color: red;

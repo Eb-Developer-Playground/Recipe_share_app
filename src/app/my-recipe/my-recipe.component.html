@@ -5,24 +5,7 @@
       <!-- Upper section -->
       <div class="recipecontrol">
         <button mat-stroked-button type="button" class="newrecipe" (click)="addRecipe()">New Recipe <span><mat-icon>create_new_folder</mat-icon></span></button>
-        <form [formGroup]="search" (submit)="searchRecipes" class="searchform"> 
-          <mat-form-field  class="search">
-            <input matInput type="search" class="searchinput" placeholder=" Search..."
-              name="search" 
-              formControlName="search" 
-              autocomplete="off">
-            <span><button mat-stroked-button type="submit" class="searchbutton">Search</button></span>             
-          </mat-form-field>
-        </form>
-        <form [formGroup]="filter" class="filterform">
-          <mat-form-field>
-            <mat-select class="filter" placeholder="Sort By" formControlName="filter" (selectionChange)="filterRecipesByCategory()">
-                <mat-option *ngFor="let category of Categorys" [value]="category.value">
-                    {{ category.viewValue }}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        </form>
+          <app-search-filter></app-search-filter>
       </div>
       <!-- Recipes display section -->
       <div class="recipedisplay" >

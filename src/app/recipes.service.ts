@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable,map  } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipesService {
   private apiUrl = 'http://localhost:3000/recipes/';
+  
   constructor(private http: HttpClient) {}
   ///get recipes from the server 
   getData(recipeId?: string): Observable<any> {
@@ -38,8 +39,23 @@ createRecipes(FormData:any): Observable<any>{
       return this.http.post<any>(`${this.apiUrl}${recipeId}/like`, {});
     }
 //search recipes 
-searchRecipes(searchTerm: string): Observable<any> {
-  console.log(searchTerm);
-  return this.http.get<any>(`${this.apiUrl}/search?query=${searchTerm}`);
+getrecipes(): Observable<any>{
+ 
+  let url="http://localhost:3000/recipes/";
+  // console.log(model.searchBy);
+  return this.http.get<any[]>(`${url}`);
+}
+searchRecipes(model: any): Observable<any> {
+ 
+  let url="http://localhost:3000/recipes/";
+  // console.log(model.searchBy);
+  let title= model.searchBy;
+  let value=model.searchTerm;
+  return this.getrecipes().pipe(
+    map(data => data.filter((item: { title: string; value: string; }) =>
+      item.value
+    )))
+ // return this.http.get<any[]>(`${url}`);
+
 }
 }
