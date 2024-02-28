@@ -16,6 +16,15 @@
             <li>{{recipe.instruction}}</li>
         </ol>
          <!--Review and recommendation sections --->
+         <div class="share-container">
+            <div class="share-options" *ngIf="showOptions">
+              <p (click)="shareWithEmail()">Share with <mat-icon> email</mat-icon></p>
+              <p (click)="shareWithWhatsApp()">Share with <mat-icon> call</mat-icon></p>
+            </div>
+            <p (click)="toggleShareOptions()"><mat-icon>share</mat-icon></p>
+            <p class="share-text">Share</p>
+          </div>
+          
         <h2>Review and Recommendation</h2>
         <form>            
             <mat-form-field>
@@ -33,7 +42,6 @@
     <div class="recipeImage">
         <img class="recimg" [src]="recipe.recipeUrl" alt="recipeImage">
         <div>
-
         </div>
     </div>
 </div>

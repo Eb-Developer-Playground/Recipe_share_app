@@ -9,7 +9,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -43,6 +43,7 @@ export class LoginComponent {
 
   constructor(private _formBuilder: FormBuilder,private router: Router,
      private userService: UserService,
+     private authService: AuthService,
      private snackBar: MatSnackBar,) {
     this.options = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -95,6 +96,7 @@ export class LoginComponent {
             this.loading = true;
             setTimeout(() => {
               this.openSnackBar('Logged in successfully', 'success-notification');
+              this.authService.login();
               this.router.navigate(['/myprofile']);
               this.loading = false;
             }, 1000);

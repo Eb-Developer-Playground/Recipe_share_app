@@ -56,16 +56,24 @@ getrecipes(): Observable<any>{
   return this.http.get<any[]>(`${url}`);
 }
 searchRecipes(model: any): Observable<any> {
- 
-  let url="http://localhost:3000/recipes/";
-  // console.log(model.searchBy);
-  let title= model.searchBy;
-  let value=model.searchTerm;
-  return this.getrecipes().pipe(
-    map(data => data.filter((item: { title: string; value: string; }) =>
-      item.value
-    )))
- // return this.http.get<any[]>(`${url}`);
+  let url = "http://localhost:3000/recipes/";
+  let searchBy = model.searchBy;
+  let searchTerm = model.searchTerm;
 
+  return this.getrecipes().pipe(
+    map(data => {
+      // Filter based on search criteria
+      return data.filter((item: any) => {
+        if (searchBy === 'title') {
+          return item.title.toLowerCase().includes(searchTerm.toLowerCase());
+        } else if (searchBy === 'category') {
+          return item.category.toLowerCase().includes(searchTerm.toLowerCase());
+        }
+        // Add more conditions based on your data model if needed
+        return true;
+      });
+    })
+  );
 }
+
 }

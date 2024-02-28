@@ -44,6 +44,30 @@ mat-form-field{
   height: 100px;
   width: 80%;
 }
+mat-icon{
+ color: $primary-color2;
+}
+.share-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.share-text {
+  position: absolute;
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  color: $primary-color2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.share-options p{
+  color: $primary-color2;
+}
+.share-container:hover .share-text {
+  opacity: 1;
+}
 .footer{
   display: flex;
   justify-content: center;

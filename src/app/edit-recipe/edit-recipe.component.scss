@@ -31,9 +31,10 @@ justify-content: center;
 }
 .footer button{
     margin: 20px;
+    color: $primary-color1;
 }
 .close, .save{   
-    color: $primary-color1;
+   
     height: 30px;
     width: 60px;
     border: none;
