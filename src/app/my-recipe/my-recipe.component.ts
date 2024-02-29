@@ -15,7 +15,7 @@ import { NavigationComponent } from '../navigation/navigation.component';
 import { MatSelectModule} from '@angular/material/select';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
 import { delay, takeUntil } from 'rxjs/operators';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import {  Subject } from 'rxjs';
 
 @Component({
   selector: 'app-my-recipe',
@@ -62,14 +62,6 @@ Categorys = [
   //fetch data from the server 
   private destroy$: Subject<void> = new Subject<void>();
   ngOnInit(): void {
-    this.search = this.formBuilder.group({
-      search: ['']
-    });
-  
-    this.filter = this.formBuilder.group({
-      filter: ['']
-    });
-  
     const userId = localStorage.getItem('loggedInUserId') ?? '';
   
     this.RecipesService.getmyData(userId).pipe(takeUntil(this.destroy$)).subscribe((data: any) => {
