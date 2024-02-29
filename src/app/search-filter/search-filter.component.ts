@@ -15,15 +15,20 @@ import { RecipesService } from '../recipes.service';
   styleUrl: './search-filter.component.scss'
 })
 export class SearchFilterComponent {
-  searchForm: FormGroup;
 
+  searchForm: FormGroup;
+  searcheData:any[]=[];
   constructor(private formBuilder: FormBuilder, private recipeService: RecipesService) {
     this.searchForm = this.formBuilder.group({
       searching: [''] ,
       searchBy: ['title'] 
     });
   }
-
+  reset() {
+    this.searcheData = [];
+    this.recipeService.updateSearchData(this.searcheData);
+    this.recipeService.setShowSearchResults(false); 
+    }
 
   onSearch(): void {
 
@@ -32,13 +37,12 @@ export class SearchFilterComponent {
        searchBy : this.searchForm?.get('searchBy')?.value
     }
     this.recipeService.searchRecipes(model).subscribe((data) => {
-     //console.log("all recipes",data); 
-     console.log("searchterm", model.searchTerm);
-     console.log("searchby", model.searchBy)
-     let items = Object.keys(data.filter((data: { title: string; }) => data.title == model.searchTerm))
-      console.log("items",items)     
-     
+     console.log("all recipes",data); 
+     this.searcheData=[...data];
+     console.log("arraydata", this.searcheData)    
+     this.recipeService.updateSearchData(this.searcheData);
+     console.log("data to be passed as searched", this.searcheData);
+     this.recipeService.setShowSearchResults(true); 
     });
-    //console.log("search parameter",model)
   }
 }

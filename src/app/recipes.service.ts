@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
-import { Observable,map  } from 'rxjs';
+import { Observable,map, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +49,21 @@ createRecipes(FormData:any): Observable<any>{
       return this.http.post<any>(`${this.apiUrl}${recipeId}/like`, {});
     }
 //search recipes 
-getrecipes(): Observable<any>{
+  //searched data to be passed to myrecipes or ALLRECIPES
+  private searchDataSubject = new BehaviorSubject<any[]>([]);
+  searchData$ = this.searchDataSubject.asObservable();
+
+  private showSearchResultsSubject = new BehaviorSubject<boolean>(false);
+  showSearchResults$ = this.showSearchResultsSubject.asObservable();
+  
+  updateSearchData(data: any[]): void {
+    this.searchDataSubject.next(data);
+  }
+  setShowSearchResults(value: boolean): void {
+    this.showSearchResultsSubject.next(value);
+  }
+
+  getrecipes(): Observable<any>{
  
   let url="http://localhost:3000/recipes/";
   // console.log(model.searchBy);

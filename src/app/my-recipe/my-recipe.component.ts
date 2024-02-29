@@ -14,6 +14,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { MatSelectModule} from '@angular/material/select';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
+import { delay, takeUntil } from 'rxjs/operators';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-my-recipe',
@@ -32,6 +34,7 @@ export class MyRecipeComponent implements OnInit {
   filter!: FormGroup;
 recipeData: any;
 filteredRecipes: any;
+SearchedRecipes: any;
 //category optons 
 Categorys = [
   {value: 'BreakFast', viewValue: 'BreakFast'},
@@ -39,7 +42,9 @@ Categorys = [
   {value: 'Dinner', viewValue: 'Dinner'},
   {value: 'Snack', viewValue: 'Snack'}
 ];
- 
+  //boolen to determine when o render searched data
+  showSearchResults: boolean = false;
+
   constructor(private formBuilder:FormBuilder,
     private RecipesService: RecipesService, 
     private cdr: ChangeDetectorRef,
@@ -55,37 +60,53 @@ Categorys = [
     
   //fetch My recipes from the server when user visit the page 
   //fetch data from the server 
-  
+  private destroy$: Subject<void> = new Subject<void>();
   ngOnInit(): void {
-    
     this.search = this.formBuilder.group({
       search: ['']
-    })
+    });
+  
     this.filter = this.formBuilder.group({
       filter: ['']
-    })
-    const userId = localStorage.getItem('loggedInUserId')?? '';
-    console.log(userId)
-      this.RecipesService.getmyData(userId).subscribe((data: any) => {
-        console.log(data);
-        this.recipeData = data;
-        console.log(this.recipeData)
-        this.filteredRecipes = data;
-        this.cdr.detectChanges();
-      }, error=>{
-        console.error('Error fetching data:', error); 
-      });
+    });
+  
+    const userId = localStorage.getItem('loggedInUserId') ?? '';
+  
+    this.RecipesService.getmyData(userId).pipe(takeUntil(this.destroy$)).subscribe((data: any) => {
+      console.log(data);
+      this.recipeData = data;
+      this.cdr.detectChanges();
+      this.showSearchResults = this.SearchedRecipes && this.SearchedRecipes.length > 0;
+      // this.showSearchResultsSubject.next(false);
+    }, error => {
+      console.error('Error fetching data:', error);
+    });
+  
+    // searched data from the service
+    this.RecipesService.searchData$.pipe(delay(0)).pipe(takeUntil(this.destroy$)).subscribe((data) => {
+      console.log('Received data from search:', data);
+      // pick only data for the logged-in user
+      this.SearchedRecipes = data.filter((recipe: any) => recipe.userId === userId);
+      this.showSearchResults = this.SearchedRecipes && this.SearchedRecipes.length > 0;
+      //this.showSearchResultsSubject.next(true);
+    });
+  }
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
   
   //sort function 
-  filterRecipesByCategory(): void {
-    const selectedCategory = this.filter.value.filter;
-    if (selectedCategory) {
-      this.filteredRecipes = this.recipeData.filter((recipe: { category: any; }) => recipe.category === selectedCategory);
-    } else {
-      this.filteredRecipes = this.recipeData;
-    }
-  }
+  // filterRecipesByCategory(): void {
+  //   const selectedCategory = this.filter.value.filter;
+  //   if (selectedCategory) {
+  //     this.filteredRecipes = this.recipeData.filter((recipe: { category: any; }) => recipe.category === selectedCategory);
+  //   } else {
+  //     this.filteredRecipes = this.recipeData;
+  //   }
+  // }
+
+
   //like recipe
   like(recipeId: any){
     console.log('Liked recipe with ID:', recipeId);

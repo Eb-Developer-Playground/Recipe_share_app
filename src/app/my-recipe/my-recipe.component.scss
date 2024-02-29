@@ -80,6 +80,7 @@ $primary-color3: black;
 //recipe rendering 
 .recipedisplay{
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
