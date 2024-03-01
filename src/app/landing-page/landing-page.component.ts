@@ -7,11 +7,12 @@ import {MatIconModule} from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { Subscription, interval } from 'rxjs';
 import { RecommendedRecipeComponent } from '../recommended-recipe/recommended-recipe.component';
+import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { TestimonialsService } from '../testimonials.service';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule,RecommendedRecipeComponent, MatMenuModule,MatToolbarModule, MatCardModule,MatIconModule],
+  imports: [CommonModule,TestimonialsComponent,RecommendedRecipeComponent, MatMenuModule,MatToolbarModule, MatCardModule,MatIconModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
